@@ -1,0 +1,26 @@
+package com.PageModules;
+
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.support.PageFactory;
+
+import com.Config.BaseClass;
+
+public class LaunchAppCentre extends BaseClass {
+	public LaunchAppCentre() {
+		super();
+		PageFactory.initElements(getDriver(), this);
+	}
+
+	public void launchAppCentre() {
+		
+		String url = "https://3-9.odp.appveen.com/appcenter";
+		getDriver().get(url);
+		getDriver().manage().window().maximize();
+		getDriver().manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+	}
+	public void loginAppCentre() {
+		
+		
+	}
+}

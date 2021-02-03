@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite" parallel="none">
+  <test name="Test">
+  <parameter name="type" value="Android"></parameter>
+    <classes>
+      <class name="studi.co.testScripts.AFS_UserStory_1044"/>
+      <class name="studi.co.testScripts.AFS_UserStory_77"/>
+      <class name="studi.co.testScripts.AFS_UserStory_65"/>
+      <class name="studi.co.testScripts.AFS_UserStory_76"/>
+      <class name="studi.co.testScripts.AFS_UserStory_2"/>
+      <class name="studi.co.testScripts.AFS_UserStory_63"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->

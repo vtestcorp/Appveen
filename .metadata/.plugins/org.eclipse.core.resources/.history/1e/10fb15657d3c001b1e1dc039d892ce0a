@@ -1,0 +1,45 @@
+package studi.co.pageModules;
+
+import java.io.IOException;
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.support.PageFactory;
+
+import studi.co.Base.BaseClass;
+import studi.co.pageObjects.Object_Begin_Practice_Topic4_Chapter1_Mathematics;
+import studi.co.pageObjects.Object_Begin_Revision_Topic4_Chapter1_Mathematics;
+
+public class Module_Verify_feedback_for_Answers_In_Revision extends BaseClass {
+	public Module_Verify_feedback_for_Answers_In_Revision() {
+		PageFactory.initElements(getDriver(), this);
+	}
+	
+	public void verify_Feedback_for_Answers_in_Revision() throws InterruptedException, IOException {
+		
+		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+		
+//		Module_Login login = new Module_Login();
+//		login.Login_to_app();
+		
+		Object_Begin_Revision_Topic4_Chapter1_Mathematics obrtcm=new Object_Begin_Revision_Topic4_Chapter1_Mathematics();
+		obrtcm.syllabus.click();
+		
+		obrtcm.subject_Mathematics.click();
+		System.out.println("Subject:Mathematics is chosen");
+		
+		
+		obrtcm.topic_4_chapter_1.click();
+		
+		//verification that questions are displayed 
+		Object_Begin_Practice_Topic4_Chapter1_Mathematics obptcm=new Object_Begin_Practice_Topic4_Chapter1_Mathematics(); 
+		
+		String questionText=obptcm.question1_part1_Text.getText(); 
+		if (questionText.contains("Write the expression")) {
+			System.out.println("Questions are displayed");
+		} else {
+			System.out.println("Questions are not displayed");
+		}
+		
+		
+	}
+}

@@ -1,0 +1,17 @@
+package com.PageObjects;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+
+public class ObjectCreateDataService extends ObjectLoginAuthor {
+
+	public ObjectCreateDataService() {
+		super();
+	}
+	String NoOfAttributes="1";
+	public By editButton=By.xpath("//span[text()='Edit']");
+	public By viewButton=By.xpath("//span[normalize-space()='View']");
+	public By newAttribute=By.xpath("//span[contains(text(),'New Attribute')]");
+	public By addAttribute=By.xpath("(//input[@type='text'])["+NoOfAttributes+"]");
+}

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="2" passed="2">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Suite" duration-ms="25923" started-at="2021-02-01T05:07:18Z" finished-at="2021-02-01T05:07:44Z">
+    <groups>
+    </groups>
+    <test name="Test" duration-ms="25923" started-at="2021-02-01T05:07:18Z" finished-at="2021-02-01T05:07:44Z">
+      <class name="com.TestCases.AuthorTests">
+        <test-method status="PASS" signature="TC05()[pri:0, instance:com.TestCases.AuthorTests@7a0ac6e3]" name="TC05" duration-ms="12134" started-at="2021-02-01T10:37:30Z" finished-at="2021-02-01T10:37:42Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC05 -->
+      </class> <!-- com.TestCases.AuthorTests -->
+      <class name="com.TestCases.AppCentreTests">
+        <test-method status="PASS" signature="setUpDriver(java.lang.String)[pri:0, instance:com.TestCases.AppCentreTests@59a6e353]" name="setUpDriver" is-config="true" duration-ms="2799" started-at="2021-02-01T10:37:18Z" finished-at="2021-02-01T10:37:21Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpDriver -->
+        <test-method status="PASS" signature="TC01()[pri:0, instance:com.TestCases.AppCentreTests@59a6e353]" name="TC01" duration-ms="9045" started-at="2021-02-01T10:37:21Z" finished-at="2021-02-01T10:37:30Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC01 -->
+        <test-method status="PASS" signature="closeResources()[pri:0, instance:com.TestCases.AppCentreTests@59a6e353]" name="closeResources" is-config="true" duration-ms="792" started-at="2021-02-01T10:37:43Z" finished-at="2021-02-01T10:37:44Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeResources -->
+      </class> <!-- com.TestCases.AppCentreTests -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
+</testng-results>

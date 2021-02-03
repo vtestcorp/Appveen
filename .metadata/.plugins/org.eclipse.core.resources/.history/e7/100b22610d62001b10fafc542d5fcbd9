@@ -1,0 +1,149 @@
+package com.TestCases;
+
+import java.io.IOException;
+
+import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.Test;
+
+import com.PageModules.LaunchAppCentre;
+import com.PageModules.LaunchAuthor;
+import com.PageObjects.ObjectAddDataAppCentre;
+import com.Utility.BaseClass;
+import com.Utility.Config;
+
+public class AppCentreTests extends BaseClass {
+	
+	
+	public AppCentreTests() {
+		super();
+	}
+	
+	@Test(enabled=true)
+	public void TC01() throws IOException, InterruptedException {
+		LaunchAuthor author=new LaunchAuthor();
+		author.launchAuthor();
+		author.loginAuthor();
+	}
+	@Test(enabled=true)
+	public void TC02() {
+		LaunchAppCentre centre=new LaunchAppCentre();
+		centre.launchAppCentre();
+		centre.loginAppCentre();
+	}
+	@Test(enabled=true)
+	public void TC03() {
+		LaunchAppCentre centre=new LaunchAppCentre();
+		centre.launchAppCentre();
+		centre.loginAppCentre();
+		ObjectAddDataAppCentre adddataappcentre=new ObjectAddDataAppCentre();
+		adddataappcentre.addData();
+	}
+	@Test(enabled=true)
+	public void TC04() {
+		LaunchAppCentre centre=new LaunchAppCentre();
+		centre.launchAppCentre();
+		centre.loginAppCentre();
+		ObjectAddDataAppCentre centred=new ObjectAddDataAppCentre();
+		centred.deleteEntry("123");
+	}
+	@Test(enabled=false)
+	public void TC05() {
+		LaunchAppCentre centre=new LaunchAppCentre();
+		centre.launchAppCentre();
+		centre.loginAppCentre();
+		ObjectAddDataAppCentre centred=new ObjectAddDataAppCentre();
+		centred.editEntryById("123", "_id", "1234567");
+	}
+	@Test
+	public void UI01() {
+		LaunchAppCentre centre=new LaunchAppCentre();
+		centre.launchAppCentre();
+		centre.loginAppCentre();
+		try {
+			Thread.sleep(5000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		ObjectAddDataAppCentre adddataappcentre=new ObjectAddDataAppCentre();
+		adddataappcentre.isSelectAllCheckBoxSelected();
+		adddataappcentre.closeCurrentWindow();
+	}
+	
+	@Test
+	public void UI02() {
+		LaunchAppCentre centre=new LaunchAppCentre();
+		centre.launchAppCentre();
+		centre.loginAppCentre();
+		try {
+			Thread.sleep(5000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		ObjectAddDataAppCentre adddataappcentre=new ObjectAddDataAppCentre();
+		adddataappcentre.individualCheckBoxSelectable();
+		adddataappcentre.closeCurrentWindow();
+	}
+	
+	@Test
+	public void UI03() {
+		LaunchAppCentre centre=new LaunchAppCentre();
+		centre.launchAppCentre();
+		centre.loginAppCentre();
+		try {
+			Thread.sleep(5000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		ObjectAddDataAppCentre adddataappcentre=new ObjectAddDataAppCentre();
+		boolean result=adddataappcentre.isDeleteIconDisplayed();
+		if (result) {
+			System.out.println("the element is displayed");
+		}
+		adddataappcentre.closeCurrentWindow();
+	}
+	
+	@Test
+	public void UI04() {
+		LaunchAppCentre centre=new LaunchAppCentre();
+		centre.launchAppCentre();
+		centre.loginAppCentre();
+		try {
+			Thread.sleep(5000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		ObjectAddDataAppCentre adddataappcentre=new ObjectAddDataAppCentre();
+		
+		boolean result=adddataappcentre.isEditIconDisplayed();
+		if (result) {
+			System.out.println("the element is displayed");
+		}
+		adddataappcentre.closeCurrentWindow();
+	}
+	
+	@Test
+	public void UI05() {
+		LaunchAppCentre centre=new LaunchAppCentre();
+		centre.launchAppCentre();
+		centre.loginAppCentre();
+		try {
+			Thread.sleep(5000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		ObjectAddDataAppCentre adddataappcentre=new ObjectAddDataAppCentre();
+		boolean result=adddataappcentre.isAddDateButtonClickable();
+		if (result) {
+			System.out.println("AddData Button clickable");
+		}
+		adddataappcentre.closeCurrentWindow();
+	}
+	
+}

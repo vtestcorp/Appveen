@@ -1,0 +1,58 @@
+package com.TestCases;
+
+import java.io.IOException;
+
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
+
+import com.PageModules.LaunchAuthor;
+import com.Utility.BaseClass;
+
+public class AuthorTests extends BaseClass {
+
+	public AuthorTests() {
+		super();
+	}
+
+	@BeforeMethod
+	public void TC01() throws IOException, InterruptedException {
+		LaunchAuthor author = new LaunchAuthor();
+		author.launchAuthor();
+		author.loginAuthor();
+	}
+	
+	@Test
+	public void UI01() throws IOException {
+		LaunchAuthor author = new LaunchAuthor();
+		author.launchAuthor();
+		author.loginAuthor();
+		author.isLogoDisplayed();
+	}
+	@AfterMethod
+	public void UI001() {
+		getDriver().quit();
+	}
+	
+	@Test
+	public void UI02() throws IOException {
+		LaunchAuthor author = new LaunchAuthor();
+		author.launchAuthor();
+		author.loginAuthor();
+		author.getCaptionColorForDataService();
+	}
+	@Test
+	public void UI03() throws IOException {
+		LaunchAuthor author = new LaunchAuthor();
+		author.launchAuthor();
+		author.loginAuthor();
+		author.getCurrentAttributes();
+	}
+	@Test
+	public void UI04() throws IOException {
+		LaunchAuthor author = new LaunchAuthor();
+		author.launchAuthor();
+		author.loginAuthor();
+		author.getCurrentRecordNumber();
+	}
+}

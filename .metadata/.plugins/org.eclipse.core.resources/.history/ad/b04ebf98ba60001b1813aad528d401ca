@@ -1,0 +1,14 @@
+package com.PageModules;
+
+import org.openqa.selenium.support.PageFactory;
+
+import com.Config.BaseClass;
+
+public class LaunchAppCentre extends BaseClass{
+	public LaunchAppCentre() {
+		
+		PageFactory.initElements(getDriver(), this);
+	}
+	
+	
+}

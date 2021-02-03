@@ -1,0 +1,9 @@
+TATA_Studi_Automation.outdir=/test-output
+TATA_Studi_Automation.useProjectJar=false
+automated-testing.outdir=/test-output
+automated-testing.useProjectJar=false
+com.practice.outdir=/test-output
+com.practice.useProjectJar=false
+demo.outdir=/test-output
+demo.useProjectJar=false
+eclipse.preferences.version=1

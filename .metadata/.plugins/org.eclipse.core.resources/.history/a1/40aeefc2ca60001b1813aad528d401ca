@@ -1,0 +1,95 @@
+package com.Config;
+
+import java.awt.AWTException;
+import java.awt.Robot;
+import java.awt.event.KeyEvent;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Properties;
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Parameters;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class BaseClass {
+
+	public static WebDriver driver = null;
+	public Select select;
+	public static WebDriverWait wait;
+	public Robot robot;
+	public static FileInputStream fis = null;
+	public static Properties prop = null;
+	public static String authorUrl = null;
+	public static String appcentreUrl = null;
+	public static String password = null;
+	public static String username = null;
+
+	public BaseClass() {
+		try {
+			prop = new Properties();
+			fis = new FileInputStream(System.getProperty("src") + "config.properties");
+			prop.load(fis);
+		} catch (IOException e) {
+
+			System.out.println("Could not read properties file");
+		}
+	}
+
+	public static void main(String[] args) {
+
+	}
+
+	public static void getProperty() {
+		authorUrl = prop.getProperty("authorUrl");
+		appcentreUrl = prop.getProperty("appCentreUrl");
+		username = prop.getProperty("password");
+		password = prop.getProperty("password");
+	}
+
+	@Parameters("browser")
+	@BeforeTest
+	public WebDriver setUpDriver(String browserName) {
+		WebDriverManager.chromedriver().setup();
+		switch (browserName) {
+		case "Chrome":
+			driver = new ChromeDriver();
+			break;
+		case "FireFox":
+			driver = new FirefoxDriver();
+			break;
+		case "IE":
+			driver = new InternetExplorerDriver();
+			break;
+		default:
+			System.err.print("Incorrect browser name, Please use Chrome, Firefox or IE");
+		}
+		return driver;
+	}
+
+	public static WebDriver getDriver() {
+		return driver;
+	}
+
+	@AfterTest
+	public void closeResources() {
+		getDriver().quit();
+	}
+}

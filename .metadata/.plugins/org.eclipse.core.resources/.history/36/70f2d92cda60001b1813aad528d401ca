@@ -1,0 +1,36 @@
+package com.PageModules;
+
+import java.io.IOException;
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.support.PageFactory;
+
+import com.PageObjects.ObjectLoginAuthor;
+import com.Utility.BaseClass;
+import com.Utility.Config;
+
+public class LaunchAuthor extends ObjectLoginAuthor {
+	ObjectLoginAuthor login = new ObjectLoginAuthor();
+	BaseClass base = new BaseClass();
+
+	public LaunchAuthor() {
+		super();
+		PageFactory.initElements(getDriver(), this);
+	}
+
+	public void launchAuthor() throws IOException {
+		//String url = "https://3-9.odp.appveen.com/author/#/auth";
+		getDriver().get(Config.authorUrl);
+		getDriver().manage().window().maximize();
+		getDriver().manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+	}
+
+	public void loginAuthor() {
+
+		enterText(login.username, Config.username);
+		clickElement(login.nextButton);
+		enterText(login.password, Config.password);
+		clickElement(login.loginButton);
+		System.out.println("Logged in successfully in Author");
+	}
+}

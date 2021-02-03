@@ -1,0 +1,42 @@
+package com.PageModules;
+
+import java.io.IOException;
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.support.PageFactory;
+
+import com.PageObjects.ObjectLoginAuthor;
+import com.Utility.BaseClass;
+import com.Utility.Config;
+
+public class LaunchAuthor extends ObjectLoginAuthor {
+	ObjectLoginAuthor login = new ObjectLoginAuthor();
+	BaseClass base = new BaseClass();
+
+	public LaunchAuthor() {
+		super();
+	}
+
+	public void launchAuthor() throws IOException {
+		getDriver().get(Config.authorUrl);
+		getDriver().manage().window().maximize();
+		getDriver().manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+	}
+
+	public void loginAuthor() {
+		login.isAlertPresent();
+		enterText(login.username, Config.username);
+		clickElement(login.nextButton);
+		enterText(login.password, Config.password);
+		clickElement(login.loginButton);
+		System.out.println("Logged in successfully in Author");
+	}
+
+	public void addAtribute(int noOfAttribute) {
+		clickElement(login.editButton);
+		for (int i = 0; i < noOfAttribute; i++) {
+			scrollToElement(login.newAttribute);
+			clickElement(login.newAttribute);
+		}
+	}
+}

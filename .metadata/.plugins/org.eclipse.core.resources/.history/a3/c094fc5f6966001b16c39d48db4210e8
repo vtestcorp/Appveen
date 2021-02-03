@@ -1,0 +1,98 @@
+package com.PageObjects;
+
+import java.util.LinkedHashMap;
+import java.util.List;
+
+import org.json.JSONObject;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+
+public class ObjectAddAttribute extends ObjectLoginAuthor {
+
+	public ObjectAddAttribute() {
+		super();
+	}
+
+	public By addNewDataService = By.xpath("//span[contains(text(),'New Data Service')]");
+	public By editButton = By.xpath("//span[contains(text(),'Edit')]");
+	public By editDraft = By.xpath("//button[text()='Edit draft']");
+
+	public By allPreviousAttributes = By.xpath("//input[@triggers='manual']");
+
+	public By requiredOnlyRadioButton = By.xpath("//div[contains(text(),'Required')]");
+	public By createRadioButton = By.xpath("//div[text()='Create Only']");
+	public By uniqueRadioButton = By.xpath("//div[contains(text(),'Unique')]");
+
+	//////// locators for dropdown and the dropdown options ///////////
+	public By dropdownArrow = By.xpath("//span[@class='fas fa-angle-down text-accent ng-star-inserted']");
+	public By dropdownTypeText = By.xpath("//span[@class='odp-abc']");
+	public By dropdownTypeNumber = By.xpath("//span[@class='odp-123']");
+	public By dropdownTypeBoolean = By.xpath("//span[@class='odp-boolean']");
+	public By dropdownTypeDate = By.xpath("//span[@class='odp-calendar']");
+	public By dropdownTypeGroup = By.xpath("//span[@class='odp-group']");
+	public By dropdownTypeUser = By.xpath("//body//odp-root//button[5]");
+	public By dropdownTypeCollection = By.xpath("//span[@class='odp-array']");
+	public By dropdownTypeLocation = By.xpath("//span[@class='odp-location']");
+	public By dropdownTypeFile = By.xpath("//span[@class='odp-attach']");
+	public By dropdownTypeSchema = By.xpath("//span[@class='odp-library']");
+	public By dropdownTypeRelation = By.xpath("//span[@class='odp-references']");
+
+	//// locators inside dropdown option when we choose text /////////
+	public By selectDropdownTextSuboptionText = By.xpath("//label[normalize-space()='Text']");
+	public By selectDropdownTextSuboptionLongText = By.xpath("//label[normalize-space()='Long Text']");
+	public By selectDropdownTextSuboptionRichText = By.xpath("//label[normalize-space()='Rich Text']");
+	public By selectDropdownTextSuboptiontEmail = By.xpath("//label[normalize-space()='Email']");
+	public By selectDropdownTextSuboptionSecureText = By.xpath("//label[normalize-space()='Secure Text']");
+	public By selectDropdownTextSuboptionListOfValue = By.xpath("//label[normalize-space()='List of values']");
+
+	///////// additional locators inside dropdown when we choose number ///////
+	public By selectDropdownNumberNumber = By.xpath("//label[text()='Number ']");
+	public By selectDropdownNumberListOfValue = By.xpath("//label[text()='List of values '] ");
+	public By selectDropdownNumberCurrency = By.xpath("//label[text()='Currency '] ");
+
+	////// locator inside main dropdown date ///////
+	public By selectDropdownDateDate = By.xpath("//input[@id='date']");
+	public By selectDropdownDateDateAndTime = By.xpath("//label[normalize-space()='Date & Time']");
+
+	/////////////// locators for sending text after selecting main dropdown and
+	/////////////// suboption dropdown ////
+
+	public By customLableTextbox = By.xpath("//input[@id='label']");
+	public By errorMessageTextbox = By.xpath("//input[@id='errorMessage']");
+	public By deafultValueTextbox = By.xpath("//input[@id='_default']");
+	public By precisionSlider = By.xpath("//input[@formcontrolname='precision']");
+	public By minLengthTextbox = By.xpath("//input[@id='_minLength']");
+	public By maxLengthTextbox = By.xpath("//input[@id='_maxLength']");
+	public By minNumberTextbox = By.xpath("//input[@id='_minNumber']");
+	public By maxNumberTextbox = By.xpath("//input[@id='_maxNumber']");
+	public By tokenTextbox = By.xpath("//input[@formcontrolname='_listInput']");
+	public By plusButton = By.xpath("//span[@class='fa fa-plus text-primary']");
+	public By descriptionTextbox= By.xpath("//textarea[@placeholder='What is this attribute for?']");
+	public By patternTextbox = By.xpath("//input[@id='_pattern']");
+	public By valuesTextbox = By.xpath("//input[@formcontrolname='_listInput']");
+	public By valuesPlusButton = By.xpath("//span[@class='fa fa-plus text-primary']");
+	public By defaultValueDropdown = By.xpath("//select[@formcontrolname='default']");
+	public By currencyDropdown = By.xpath("//select[@id='_currency']");
+	public By popUpNo = By.xpath("//button[text()='No']");
+	public By popUpYes = By.xpath("//button[text()='Yes']");
+	public By toggleYesNo = By.xpath("//input[@formcontrolname='default']//following-sibling::span[@class='toggler']");
+	public By togglePosition = By.xpath("//input[@formcontrolname='default']//following-sibling::span[@class='ml-3']");
+	public By linkedLibraryTextbox=By.xpath("//input[@role='combobox']");
+	
+	
+	
+	////////// locators for selecting date in send text columns////////
+	public By selectDate = By.xpath("//button[normalize-space()='Select Date']");
+	public By month = By.xpath("(//select[@class='text-primary time-select'])[1]");
+	public By year = By.xpath("(//select[@class='text-primary time-select'])[2]");
+	public By hour = By.xpath("(//select[@class='text-primary time-select'])[3]");
+	public By minute = By.xpath("(//select[@class='text-primary time-select'])[4]");
+	public By second = By.xpath("(//select[@class='text-primary time-select'])[5]");
+	public By doneButton = By.xpath("//button[normalize-space()='Done']");
+	public By cancelButton = By.xpath("//button[text()='Cancel']");
+
+	public By saveButtonAttribute = By.xpath("//button[@id='sbButtonSave']");
+	public By saveNDeployAttribute = By.xpath("//span[normalize-space()='Save & Deploy']");
+	public By cancelAttribute = By.xpath("//button[@id='sbButtonCancel']");
+
+}

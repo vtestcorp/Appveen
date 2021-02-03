@@ -1,0 +1,20 @@
+package com.PageModules;
+
+import org.openqa.selenium.support.PageFactory;
+
+import com.Config.BaseClass;
+
+public class LaunchAuthor extends BaseClass {
+	
+	
+	public LaunchAuthor() {
+		super();
+		PageFactory.initElements(getDriver(), this);
+	}
+	public void launchAuthor() {
+		
+	}
+	public void loginAuthor() {
+		
+	}
+}

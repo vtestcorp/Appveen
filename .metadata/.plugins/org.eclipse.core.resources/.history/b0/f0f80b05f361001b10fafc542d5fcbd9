@@ -1,0 +1,118 @@
+package com.TestCases;
+
+import java.io.IOException;
+
+import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.Test;
+
+import com.PageModules.LaunchAppCentre;
+import com.PageModules.LaunchAuthor;
+import com.PageObjects.AddDataAppCentre;
+import com.Utility.BaseClass;
+import com.Utility.Config;
+
+public class FunctionalTests extends BaseClass {
+	
+	
+	public FunctionalTests() {
+		super();
+	}
+	
+	@Test(enabled=false)
+	public void TC01() throws IOException, InterruptedException {
+		LaunchAuthor author=new LaunchAuthor();
+		author.launchAuthor();
+		author.loginAuthor();
+	}
+	@Test(enabled=false)
+	public void TC02() {
+		LaunchAppCentre centre=new LaunchAppCentre();
+		centre.launchAppCentre();
+		centre.loginAppCentre();
+	}
+	@Test(enabled=false)
+	public void TC03() {
+		LaunchAppCentre centre=new LaunchAppCentre();
+		centre.launchAppCentre();
+		centre.loginAppCentre();
+		AddDataAppCentre adddataappcentre=new AddDataAppCentre();
+		adddataappcentre.addData();
+	}
+	@Test(enabled=false)
+	public void TC04() {
+		LaunchAppCentre centre=new LaunchAppCentre();
+		centre.launchAppCentre();
+		centre.loginAppCentre();
+		AddDataAppCentre centred=new AddDataAppCentre();
+		centred.deleteEntry("123");
+	}
+	@Test(enabled=false)
+	public void TC05() {
+		LaunchAppCentre centre=new LaunchAppCentre();
+		centre.launchAppCentre();
+		centre.loginAppCentre();
+		AddDataAppCentre centred=new AddDataAppCentre();
+		centred.editEntryById("123", "_id", "1234567");
+	}
+	@Test
+	public void UI01() {
+		LaunchAppCentre centre=new LaunchAppCentre();
+		centre.launchAppCentre();
+		centre.loginAppCentre();
+		AddDataAppCentre adddataappcentre=new AddDataAppCentre();
+		adddataappcentre.isSelectAllCheckBoxSelected();
+		adddataappcentre.closeCurrentWindow();
+	}
+	
+	@Test
+	public void UI02() {
+		LaunchAppCentre centre=new LaunchAppCentre();
+		centre.launchAppCentre();
+		centre.loginAppCentre();
+		AddDataAppCentre adddataappcentre=new AddDataAppCentre();
+		adddataappcentre.individualCheckBoxSelectable();
+		adddataappcentre.closeCurrentWindow();
+	}
+	
+	@Test
+	public void UI03() {
+		LaunchAppCentre centre=new LaunchAppCentre();
+		centre.launchAppCentre();
+		centre.loginAppCentre();
+		AddDataAppCentre adddataappcentre=new AddDataAppCentre();
+		boolean result=adddataappcentre.isDeleteIconDisplayed();
+		if (result) {
+			System.out.println("the element is displayed");
+		}
+		adddataappcentre.closeCurrentWindow();
+	}
+	
+	@Test
+	public void UI04() {
+		LaunchAppCentre centre=new LaunchAppCentre();
+		centre.launchAppCentre();
+		centre.loginAppCentre();
+		AddDataAppCentre adddataappcentre=new AddDataAppCentre();
+		
+		boolean result=adddataappcentre.isEditIconDisplayed();
+		if (result) {
+			System.out.println("the element is displayed");
+		}
+		adddataappcentre.closeCurrentWindow();
+	}
+	
+	@Test
+	public void UI05() {
+		LaunchAppCentre centre=new LaunchAppCentre();
+		centre.launchAppCentre();
+		centre.loginAppCentre();
+		AddDataAppCentre adddataappcentre=new AddDataAppCentre();
+		boolean result=adddataappcentre.isAddDateButtonClickable();
+		if (result) {
+			System.out.println("AddData Button clickable");
+		}
+		adddataappcentre.closeCurrentWindow();
+	}
+	
+}

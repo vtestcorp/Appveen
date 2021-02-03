@@ -1,0 +1,160 @@
+package com.PageObjects;
+
+import java.util.List;
+
+import org.junit.Assert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+
+public class AddDataAppCentre extends ObjectLoginAppCentre {
+
+	public AddDataAppCentre() {
+		super();
+	}
+
+	//// fields added in author for DS visible here in App Centre///////////
+	public By addDataButton = By.xpath("//span[normalize-space()='Add Data']");
+	public By nameTextBox = By.xpath("//input[@id='name']");
+	public By idTextBox = By.xpath("//input[@id='_id']");
+	
+
+	////// Dynamic Locator for Adding Attribute in App Centre after clicking Add
+	////// Data //////////
+	public By allinputTextBoxes = By.xpath("//input");
+
+	///////// buttons for adding data/////////
+	public By cancelButton = By.xpath("//span[normalize-space()='Cancel']");
+	public By saveNCreateanotherButton = By.xpath("//span[normalize-space()='Save & create another']");
+	public By saveButton = By.xpath("//span[normalize-space()='Save']");
+
+	///// checkbox for editing /////////////
+	public By allcheckBoxes = By.xpath("//div[@col-id='_checkbox']");
+	public By selectcheckBoxForAll=By.xpath("//strong[text()='Select all ']");
+	public By editButton = By.xpath("//span[normalize-space()='Edit']");
+	public By saveChangesButton = By.xpath("//span[text()='Edit']");
+	public By deleteButton = By.xpath("//span[contains(text(),'Delete')]");
+
+	/// all Elements id ////////////
+	public By allIds = By.xpath("//div[@col-id='_id']");
+
+	////// Pop-up Yes No //////////////
+	public By yesPopup = By.xpath("//button[text()='No']");
+	public By noPopup = By.xpath("//button[text()='Yes']");
+
+	public void getCheckboxesNumber() {
+		int numberOfCheckBoxes = (getWebElements(allcheckBoxes).size() - 1);
+	}
+
+	public void addData() {
+		try {
+			Thread.sleep(5000);
+		} catch (InterruptedException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		clickElement(addDataButton);
+		try {
+			Thread.sleep(5000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		enterText(idTextBox, generateRandomString());
+		enterText(nameTextBox, generateRandomString());
+		clickElement(saveButton);
+	}
+
+	public void editEntryById(String matchedText, String matchid, String editedValue) {
+		try {
+			Thread.sleep(5000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		List<WebElement> elements = getWebElements(allIds);
+		int size = elements.size();
+		int index = 0;
+		for (int i = 1; i < size; i++) {
+			WebElement element = elements.get(i);
+			String textValue = element.getText();
+			if (textValue.equalsIgnoreCase(matchedText)) {
+				index = elements.indexOf(element);
+				System.out.println(index);
+			}
+		}
+		try {
+			Thread.sleep(3000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		List<WebElement> checkBoxes = getWebElements(allcheckBoxes);
+		clickElementJS(checkBoxes.get(index));
+		clickElementJS(editButton);
+
+		List<WebElement> inputTextBoxes = getWebElements(allinputTextBoxes);
+		for (int i = 1; i < inputTextBoxes.size(); i++) {
+			String idValue = inputTextBoxes.get(i).getAttribute("id");
+			if (idValue.equalsIgnoreCase(matchid)) {
+				clearAllText(inputTextBoxes.get(i));
+				inputTextBoxes.get(i).sendKeys(editedValue);
+				break;
+			}
+		}
+		clickElementJS(saveChangesButton);
+		closeCurrentWindow();
+	}
+
+	public void deleteEntry(String matchedText) {
+		try {
+			Thread.sleep(5000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		List<WebElement> elements = getWebElements(allIds);
+		int size = elements.size();
+		int index = 0;
+		for (int i = 1; i < size; i++) {
+			WebElement element = elements.get(i);
+			String textValue = element.getText();
+			if (textValue.equalsIgnoreCase(matchedText)) {
+				index = elements.indexOf(element);
+				System.out.println(index);
+			}
+		}
+		try {
+			Thread.sleep(3000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		List<WebElement> checkBoxes = getWebElements(allcheckBoxes);
+		
+		clickElementJS(checkBoxes.get(index));
+		try {
+			Thread.sleep(5000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		clickElement(deleteButton);
+		clickElement(yesPopup);
+		closeCurrentWindow();
+	}
+	///////////////// UI Validation ///////////////
+	public void isSelectAllCheckBoxSelected() {
+		clickElementJS(selectcheckBoxForAll);
+		boolean result=isElementSelected(selectcheckBoxForAll);
+		Assert.assertTrue(result);
+	}
+	
+	public void individualCheckBoxSelectable() {
+		List<WebElement> checkBoxes = getWebElements(allcheckBoxes);
+		int size=checkBoxes.size();
+		for (int i=1; i<size; i++) {
+		clickElementJS(checkBoxes.get(i));
+		isElementSelected(checkBoxes.get(i));
+		}
+	}
+}

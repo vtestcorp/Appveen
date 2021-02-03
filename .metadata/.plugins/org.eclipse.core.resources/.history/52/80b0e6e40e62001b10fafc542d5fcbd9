@@ -1,0 +1,22 @@
+package com.TestCases;
+
+import java.io.IOException;
+
+import org.testng.annotations.Test;
+
+import com.PageModules.LaunchAuthor;
+import com.Utility.BaseClass;
+
+public class AuthorTests extends BaseClass {
+
+	public AuthorTests() {
+		super();
+	}
+
+	@Test(enabled=true)
+	public void TC01() throws IOException, InterruptedException {
+		LaunchAuthor author=new LaunchAuthor();
+		author.launchAuthor();
+		author.loginAuthor();
+}
+}

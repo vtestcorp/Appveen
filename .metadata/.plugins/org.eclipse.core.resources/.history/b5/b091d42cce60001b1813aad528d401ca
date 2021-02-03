@@ -1,0 +1,18 @@
+package com.PageObjects;
+
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+import com.Config.Keyword;
+
+public class ObjectLoginAppCentre extends Keyword {
+	
+	public ObjectLoginAppCentre() {
+		super();
+		PageFactory.initElements(getDriver(), this);
+	}
+	
+	@FindBy (xpath = "")
+	public WebElement element;
+}

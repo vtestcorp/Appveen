@@ -1,0 +1,70 @@
+package com.PageObjects;
+
+import java.util.LinkedHashMap;
+import java.util.List;
+
+import org.json.JSONObject;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+
+public class ObjectAddAttribute extends ObjectLoginAuthor {
+
+	public ObjectAddAttribute() {
+		super();
+	}
+
+	public By addNewDataService = By.xpath("//span[contains(text(),'New Data Service')]");
+	public By editButton = By.xpath("//span[contains(text(),'Edit')]");
+	public By editDraft = By.xpath("//button[text()='Edit draft']");
+
+	public By allPreviousAttributes = By.xpath("//input[@triggers='manual']");
+
+	public By requiredOnlyRadioButton = By.xpath("//div[contains(text(),'Required')]");
+	public By createRadioButton = By.xpath("//div[text()='Create Only']");
+	public By uniqueRadioButton = By.xpath("//div[contains(text(),'Unique')]");
+
+	//////// locators for dropdown and the dropdown options ///////////
+	public By dropdownArrow = By.xpath("//span[@class='fas fa-angle-down text-accent ng-star-inserted']");
+	public By dropdownTypeText = By.xpath("//span[@class='odp-abc']");
+	public By dropdownTypeNumber = By.xpath("//span[@class='odp-123']");
+	public By dropdownTypeBoolean = By.xpath("//span[@class='odp-boolean']");
+	public By dropdownTypeDate = By.xpath("//span[@class='odp-calendar']");
+	public By dropdownTypeGroup = By.xpath("//span[@class='odp-group']");
+	public By dropdownTypeUser = By.xpath("//body//odp-root//button[5]");
+	public By dropdownTypeCollection = By.xpath("//span[@class='odp-array']");
+	public By dropdownTypeLocation = By.xpath("//span[@class='odp-location']");
+	public By dropdownTypeFile = By.xpath("//span[@class='odp-attach']");
+	public By dropdownTypeSchema = By.xpath("//span[@class='odp-library']");
+	public By dropdownTypeRelation = By.xpath("//span[@class='odp-references']");
+
+	//// locators inside dropdown option when we choose text /////////
+	public By selectDropdownTextSuboptionText = By.xpath("//label[normalize-space()='Text']");
+	public By selectDropdownTextSuboptionLongText = By.xpath("//label[normalize-space()='Long Text']");
+	public By selectDropdownTextSuboptionRichText = By.xpath("//label[normalize-space()='Rich Text']");
+	public By selectDropdownTexSuboptiontEmail = By.xpath("//label[normalize-space()='Email']");
+	public By selectDropdownTextSuboptionSecureText = By.xpath("//label[normalize-space()='Secure Text']");
+	public By selectDropdownTextLSuboptionListOfValue = By.xpath("//label[normalize-space()='List of values']");
+
+	///////// additional locators inside dropdown when we choose number ///////
+	public By selectDropdownNumberNumber = By.xpath("//label[text()='Number ']");
+	public By selectDropdownNumberListOfValue = By.xpath("//label[text()='List of values '] ");
+	public By selectDropdownCurrency = By.xpath("//label[text()='Currency '] ");
+
+	/////// locator when we choose number inside dropdown and then again number from
+	/////// the list//
+	public By customLableTextbox = By.xpath("//input[@id='label']");
+	public By errorMessageTextbox = By.xpath("//input[@id='errorMessage']");
+	public By deafultValueTextbox = By.xpath("//input[@id='_default']");
+	public By precisionSlider = By.xpath("//input[@formcontrolname='precision']");
+	public By minNumberTextbox = By.xpath("//input[@id='_minNumber']");
+	public By maxNumberTextbox = By.xpath("//input[@id='_maxNumber']");
+	public By descriptionTextarea = By.xpath("//textarea[@placeholder='What is this attribute for?']");
+
+	public By popUpNo = By.xpath("//button[text()='No']");
+	public By popUpYes = By.xpath("//button[text()='Yes']");
+
+	public By saveButtonAttribute=By.xpath("//button[@id='sbButtonSave']");
+	public By saveNDeployAttribute=By.xpath("//span[normalize-space()='Save & Deploy']");
+	public By cancelAttribute=By.xpath("//button[@id='sbButtonCancel']");
+	
+}

@@ -1,0 +1,74 @@
+package com.TestCases;
+
+import java.io.IOException;
+
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
+
+import com.PageModules.AddAttribute;
+import com.PageModules.LaunchAuthor;
+import com.Utility.BaseClass;
+
+public class AuthorTests extends BaseClass {
+
+	public AuthorTests() {
+		super();
+	}
+
+	@Test(enabled=false)
+	public void TC01() throws IOException, InterruptedException {
+		LaunchAuthor author = new LaunchAuthor();
+		author.launchAuthor();
+		author.loginAuthor();
+	}
+	
+	@Test(enabled =false)
+	public void UI01() throws IOException {
+		LaunchAuthor author = new LaunchAuthor();
+		author.launchAuthor();
+		author.loginAuthor();
+		//author.isLogoDisplayed();
+		author.getCurrentAttributes();
+		author.getCaptionColorForDataService();
+		author.getCurrentRecordNumber();
+	}
+	@Test(enabled=false)
+	public void UI02() throws IOException {
+		LaunchAuthor author = new LaunchAuthor();
+		author.launchAuthor();
+		author.loginAuthor();
+		author.getCaptionColorForDataService();
+	}
+	@Test(enabled = false)
+	public void UI03() throws IOException {
+		LaunchAuthor author = new LaunchAuthor();
+		author.launchAuthor();
+		author.loginAuthor();
+		author.getCurrentAttributes();
+	}
+	@Test(enabled=false)
+	public void UI04() throws IOException {
+		LaunchAuthor author = new LaunchAuthor();
+		author.launchAuthor();
+		author.loginAuthor();
+		author.getCurrentRecordNumber();
+	}
+	@Test(enabled = false)
+	public void TC04() throws IOException {
+		LaunchAuthor author = new LaunchAuthor();
+		author.launchAuthor();
+		author.loginAuthor();
+		AddAttribute att=new AddAttribute();
+		att.addNewAttribute();
+	}
+	@Test(enabled =true)
+	public void TC05() throws IOException {
+		LaunchAuthor author = new LaunchAuthor();
+		author.launchAuthor();
+		author.loginAuthor();
+		AddAttribute att=new AddAttribute();
+		System.out.println(att.getNewAttributeData().toString());
+		att.addNewAttribute();
+	}
+}

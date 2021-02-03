@@ -1,0 +1,230 @@
+package com.Utility;
+
+import java.awt.AWTException;
+import java.awt.Robot;
+import java.awt.event.KeyEvent;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.concurrent.TimeUnit;
+
+import org.apache.commons.lang3.RandomStringUtils;
+import org.openqa.selenium.Alert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.NoAlertPresentException;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+public class Keyword extends BaseClass {
+
+	public Keyword() {
+		super();
+	}
+
+	public WebElement getElement(By by) {
+		return getDriver().findElement(by);
+	}
+
+	public List<WebElement> getWebElements(By by) {
+		List<WebElement> elements = getDriver().findElements(by);
+		return elements;
+	}
+
+	public void selectFromDropdownByIndex(By by, String value) {
+		WebElement element = getDriver().findElement(by);
+		select = new Select(element);
+		select.selectByIndex(Integer.parseInt(value));
+	}
+
+	public void selectFromDropdownByText(By by, String value) {
+		WebElement element = getDriver().findElement(by);
+		select = new Select(element);
+		select.selectByVisibleText(value);
+	}
+
+	public void selectFromDropdownByValue(By by, String value) {
+		WebElement element = getDriver().findElement(by);
+		select = new Select(element);
+		select.selectByValue(value);
+	}
+
+	public void applyExplicitWait(int timeInSeconds) {
+		WebDriverWait wait = new WebDriverWait(getDriver(), 15, 250);
+		wait.withTimeout(timeInSeconds, TimeUnit.SECONDS);
+	}
+
+	public void waitUntilElementVisible(By by) {
+		WebElement element = getDriver().findElement(by);
+		wait.until(ExpectedConditions.visibilityOf(element));
+	}
+
+	public void waitUntilElementPresent(By by) {
+		WebDriverWait wait = new WebDriverWait(getDriver(), 15, 250);
+		wait.until(ExpectedConditions.presenceOfElementLocated(by));
+	}
+
+	public void waitUntilElementClickable(By by) {
+		WebDriverWait wait = new WebDriverWait(getDriver(), 15, 250);
+		WebElement element = getDriver().findElement(by);
+		wait.until(ExpectedConditions.elementToBeClickable(element));
+	}
+
+	public void clearText(By by) {
+		driver.findElement(by).clear();
+	}
+
+	public void clearText(WebElement element) {
+		element.clear();
+	}
+
+	public void clearAllText(By by) {
+		WebElement element = getDriver().findElement(by);
+		element.sendKeys(Keys.CONTROL + "a");
+		element.sendKeys(Keys.DELETE);
+	}
+
+	public void clearAllText(WebElement element) {
+		element.sendKeys(Keys.CONTROL + "a");
+		element.sendKeys(Keys.DELETE);
+	}
+
+	public void enterText(By by, String keys) {
+		WebElement element = getDriver().findElement(by);
+		element.sendKeys(keys);
+	}
+
+	public void enterTextJS(By by, String keys) {
+		WebElement element = getDriver().findElement(by);
+		JavascriptExecutor js = (JavascriptExecutor) getDriver();
+		js.executeScript("arguments[0].value='" + keys + "';", element);
+	}
+
+	public void enterTextRobot(String keys) {
+		try {
+			robot = new Robot();
+		} catch (AWTException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		for (char c : keys.toCharArray()) {
+			int keyCode = KeyEvent.getExtendedKeyCodeForChar(c);
+			if (KeyEvent.CHAR_UNDEFINED == keyCode) {
+				throw new RuntimeException("Key code not found for character '" + c + "'");
+			}
+			robot.keyPress(keyCode);
+			robot.delay(100);
+			robot.keyRelease(keyCode);
+			robot.delay(100);
+		}
+	}
+
+	public void clickElement(By by) {
+		WebDriverWait wait = new WebDriverWait(getDriver(), 10, 250);
+		WebElement element = getDriver().findElement(by);
+		wait.until(ExpectedConditions.visibilityOf(element));
+		element.click();
+	}
+
+	public void clickElement(WebElement element) {
+		WebDriverWait wait = new WebDriverWait(getDriver(), 10, 250);
+		wait.until(ExpectedConditions.visibilityOf(element));
+		element.click();
+	}
+
+	public void clickElementJS(By by) {
+		WebElement element = getDriver().findElement(by);
+		JavascriptExecutor js = (JavascriptExecutor) getDriver();
+		js.executeScript("arguments[0].click();", element);
+	}
+
+	public void clickElementJS(WebElement element) {
+		JavascriptExecutor js = (JavascriptExecutor) getDriver();
+		js.executeScript("arguments[0].click();", element);
+	}
+
+	public void closePreviousTab() {
+		ArrayList<String> tabs = new ArrayList<>(driver.getWindowHandles());
+		getDriver().switchTo().window(tabs.get(tabs.size() - 2));
+		getDriver().close();
+		getDriver().switchTo().window(tabs.get(tabs.size() - 1));
+	}
+
+	public String getText(By by) {
+		WebElement element = getDriver().findElement(by);
+		String s = element.getText();
+		return s;
+	}
+
+	public void scrollToElement(By by) {
+		WebElement element = getDriver().findElement(by);
+		JavascriptExecutor js = (JavascriptExecutor) getDriver();
+		js.executeScript("arguments[0].scrollIntoView(true);", element);
+	}
+
+	public String getCSSValue(By by, String attribute) {
+		WebElement element = getDriver().findElement(by);
+		String value = element.getCssValue(attribute);
+		return value;
+	}
+
+	public boolean isElementPresent(By by) {
+		try {
+			waitUntilElementVisible(by);
+			return true;
+		} catch (Exception e) {
+			return false;
+		}
+
+	}
+
+	public boolean isAlertPresent() {
+		try {
+			Alert alert = getDriver().switchTo().alert();
+			alert.accept();
+			System.out.println("Alert was present and then accepted");
+			return true;
+		} catch (NoAlertPresentException e) {
+			System.out.println("Alert was not present");
+			return false;
+		}
+	}
+
+	public String generateRandomString() {
+		String generatedString = RandomStringUtils.randomAlphabetic(8);
+		System.out.println(generatedString);
+		return generatedString;
+	}
+
+	public boolean isElementSelected(WebElement element) {
+		return element.isSelected();
+	}
+
+	public boolean isElementSelected(By by) {
+		return getDriver().findElement(by).isSelected();
+	}
+
+	public boolean isElementDisplayed(By by) {
+		boolean result = getDriver().findElement(by).isDisplayed();
+		return result;
+	}
+
+	public boolean isElementDisplayed(WebElement element) {
+		boolean result = element.isDisplayed();
+		return result;
+	}
+	
+	public String getCSSValue(WebElement element, String attribute) {
+		String value=element.getCssValue("attribute");
+		return value;
+	}
+
+	public void closeCurrentWindow() {
+		getDriver().close();
+	}
+	public void closeAllWindows() {
+		getDriver().quit();
+	}
+}

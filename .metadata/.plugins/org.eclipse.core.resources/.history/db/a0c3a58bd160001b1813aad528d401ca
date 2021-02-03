@@ -1,0 +1,53 @@
+package com.Utility;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.Properties;
+
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeSuite;
+
+public class Config {
+	public static FileInputStream fis = null;
+	public static Properties prop = null;
+	public static String authorUrl = null;
+	public static String appcentreUrl = null;
+	public static String password = null;
+	public static String username = null;
+
+	public Config() {
+	}
+	static {
+		try {
+			fis = new FileInputStream(System.getProperty("src") + "config.properties");
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+	@BeforeSuite
+	public void getProperty() {
+		prop = new Properties();
+		try {
+			prop.load(fis);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+	}
+
+	public static void getAllProperties() {
+		authorUrl = prop.getProperty("authorUrl");
+		System.out.println(authorUrl);
+		appcentreUrl = prop.getProperty("appCentreUrl");
+		System.out.println(appcentreUrl);
+		username = prop.getProperty("username");
+		System.out.println(username);
+		password = prop.getProperty("password");
+		System.out.println(password);
+	}
+
+}

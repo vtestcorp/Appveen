@@ -1,0 +1,18 @@
+package trials;
+
+import org.json.JSONObject;
+
+public class JSONTest {
+	public static void main(String[] args) {
+		JSONObject object=new JSONObject();
+		object.put("Custom Label", "Employee Number");
+		object.put("Error Message", "Should be a number");
+		object.put("Default Value", "1");
+		object.put("Minimum Value", "1");
+		object.put("Maximum Value", "1000");
+		object.put("Description Text", "Describes Employee Number");
+		System.out.println(object.toString());
+		System.out.println(object.get("Custom Label"));
+	}
+
+}

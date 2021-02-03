@@ -1,0 +1,28 @@
+package com.PageObjects;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+import com.Utility.Keyword;
+
+public class ObjectLoginAppCentre extends Keyword {
+	
+	public ObjectLoginAppCentre() {
+		super();
+		PageFactory.initElements(getDriver(), this);
+	}
+	
+	By username=By.xpath("//input[@id='username']");
+	By nextButton=By.xpath("//span[text()='Next']");
+	@FindBy (xpath = "//span[text()='Next']")
+	public WebElement nextButton;
+	
+	@FindBy (xpath = "//input[@id='password']")
+	public WebElement password;
+	
+	@FindBy (xpath ="//span[text()='Login']")
+	public WebElement loginButton;
+	
+}

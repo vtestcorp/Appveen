@@ -1,0 +1,10 @@
+package com.PageObjects;
+
+public class ObjectCreateDataService extends ObjectLoginAuthor {
+
+	public ObjectCreateDataService() {
+		super();
+	}
+	
+}
+//span[text()='Edit']
