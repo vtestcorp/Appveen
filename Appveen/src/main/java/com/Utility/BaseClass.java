@@ -25,6 +25,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
 
@@ -42,7 +43,8 @@ public class BaseClass extends Config {
 	}
 
 	@Parameters("browser")
-	@BeforeTest
+	//@BeforeTest
+	@BeforeMethod
 	public WebDriver setUpDriver(String browserName) {
 		WebDriverManager.chromedriver().setup();
 		switch (browserName) {
@@ -65,8 +67,8 @@ public class BaseClass extends Config {
 		return driver;
 	}
 
-	@AfterTest
-	public void closeResources() {
-		getDriver().quit();
+	@AfterMethod
+	public void closeDriver() {
+		getDriver().close();
 	}
 }

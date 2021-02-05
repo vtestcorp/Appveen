@@ -88,6 +88,8 @@ public class ObjectLoginAuthor extends Keyword {
 	public By tokensTextBox=By.xpath("//input[@formcontrolname='_listInput']");
 	public By tokenAdditionButton=By.xpath("//button[contains(@class,'list-add-button')]");
 	public By linkedLibraryTextbox=By.xpath("//input[@role='combobox']");
+	public By deletionOfRecordsSlider=By.xpath("//div[text()='Allow deletion of related records']//parent::div//child::span[@class='slider']");
+	
 	
 	//////////// Pop-up for changing attribute ////////
 	public By yesPopup = By.xpath("//button[normalize-space()='Yes']");

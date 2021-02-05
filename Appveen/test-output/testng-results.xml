@@ -1,19 +1,157 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="2" passed="2">
+<testng-results skipped="14" failed="0" total="15" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="25923" started-at="2021-02-01T05:07:18Z" finished-at="2021-02-01T05:07:44Z">
+  <suite name="Suite" duration-ms="10881" started-at="2021-02-05T07:05:12Z" finished-at="2021-02-05T07:05:23Z">
     <groups>
     </groups>
-    <test name="Test" duration-ms="25923" started-at="2021-02-01T05:07:18Z" finished-at="2021-02-01T05:07:44Z">
+    <test name="Test" duration-ms="10881" started-at="2021-02-05T07:05:12Z" finished-at="2021-02-05T07:05:23Z">
       <class name="com.TestCases.AuthorTests">
-        <test-method status="PASS" signature="TC05()[pri:0, instance:com.TestCases.AuthorTests@7a0ac6e3]" name="TC05" duration-ms="12134" started-at="2021-02-01T10:37:30Z" finished-at="2021-02-01T10:37:42Z">
+        <test-method status="FAIL" signature="login()[pri:0, instance:com.TestCases.AuthorTests@71be98f5]" name="login" is-config="true" duration-ms="0" started-at="2021-02-05T12:35:23Z" finished-at="2021-02-05T12:35:23Z">
+          <exception class="org.openqa.selenium.NoSuchSessionException">
+            <message>
+              <![CDATA[invalid session id
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-T777DIF', ip: '192.168.43.35', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_241'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 88.0.4324.146, chrome: {chromedriverVersion: 88.0.4324.96 (68dba2d8a0b14..., userDataDir: C:\Users\Admin\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:62743}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: ef9fa275c4f6cbb93f00ca56185259f5]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.NoSuchSessionException: invalid session id
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-T777DIF', ip: '192.168.43.35', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_241'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 88.0.4324.146, chrome: {chromedriverVersion: 88.0.4324.96 (68dba2d8a0b14..., userDataDir: C:\Users\Admin\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:62743}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: ef9fa275c4f6cbb93f00ca56185259f5
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:277)
+	at com.PageModules.LaunchAuthor.launchAuthor(LaunchAuthor.java:21)
+	at com.TestCases.AuthorTests.login(AuthorTests.java:22)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)
+	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:514)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:215)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:589)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:822)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1130)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:782)
+	at org.testng.TestRunner.run(TestRunner.java:632)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:268)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1244)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
+	at org.testng.TestNG.run(TestNG.java:1064)
+	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:113)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:206)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:177)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.NoSuchSessionException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- login -->
+        <test-method status="SKIP" signature="TC01()[pri:0, instance:com.TestCases.AuthorTests@71be98f5]" name="TC01" duration-ms="1" started-at="2021-02-05T12:35:23Z" finished-at="2021-02-05T12:35:23Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC01 -->
+        <test-method status="SKIP" signature="closeDriver()[pri:0, instance:com.TestCases.AuthorTests@71be98f5]" name="closeDriver" is-config="true" duration-ms="0" started-at="2021-02-05T12:35:23Z" finished-at="2021-02-05T12:35:23Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeDriver -->
+        <test-method status="SKIP" signature="login()[pri:0, instance:com.TestCases.AuthorTests@71be98f5]" name="login" is-config="true" duration-ms="0" started-at="2021-02-05T12:35:23Z" finished-at="2021-02-05T12:35:23Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- login -->
+        <test-method status="SKIP" signature="TC04()[pri:0, instance:com.TestCases.AuthorTests@71be98f5]" name="TC04" duration-ms="3" started-at="2021-02-05T12:35:23Z" finished-at="2021-02-05T12:35:23Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC04 -->
+        <test-method status="SKIP" signature="closeDriver()[pri:0, instance:com.TestCases.AuthorTests@71be98f5]" name="closeDriver" is-config="true" duration-ms="0" started-at="2021-02-05T12:35:23Z" finished-at="2021-02-05T12:35:23Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeDriver -->
+        <test-method status="SKIP" signature="login()[pri:0, instance:com.TestCases.AuthorTests@71be98f5]" name="login" is-config="true" duration-ms="0" started-at="2021-02-05T12:35:23Z" finished-at="2021-02-05T12:35:23Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- login -->
+        <test-method status="SKIP" signature="TC05()[pri:0, instance:com.TestCases.AuthorTests@71be98f5]" name="TC05" duration-ms="12" started-at="2021-02-05T12:35:23Z" finished-at="2021-02-05T12:35:23Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TC05 -->
+        <test-method status="SKIP" signature="closeDriver()[pri:0, instance:com.TestCases.AuthorTests@71be98f5]" name="closeDriver" is-config="true" duration-ms="0" started-at="2021-02-05T12:35:23Z" finished-at="2021-02-05T12:35:23Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeDriver -->
+        <test-method status="SKIP" signature="login()[pri:0, instance:com.TestCases.AuthorTests@71be98f5]" name="login" is-config="true" duration-ms="0" started-at="2021-02-05T12:35:23Z" finished-at="2021-02-05T12:35:23Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- login -->
+        <test-method status="SKIP" signature="UI01()[pri:0, instance:com.TestCases.AuthorTests@71be98f5]" name="UI01" duration-ms="22" started-at="2021-02-05T12:35:23Z" finished-at="2021-02-05T12:35:23Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- UI01 -->
+        <test-method status="SKIP" signature="closeDriver()[pri:0, instance:com.TestCases.AuthorTests@71be98f5]" name="closeDriver" is-config="true" duration-ms="0" started-at="2021-02-05T12:35:23Z" finished-at="2021-02-05T12:35:23Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeDriver -->
+        <test-method status="SKIP" signature="login()[pri:0, instance:com.TestCases.AuthorTests@71be98f5]" name="login" is-config="true" duration-ms="0" started-at="2021-02-05T12:35:23Z" finished-at="2021-02-05T12:35:23Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- login -->
+        <test-method status="SKIP" signature="UI02()[pri:0, instance:com.TestCases.AuthorTests@71be98f5]" name="UI02" duration-ms="2" started-at="2021-02-05T12:35:23Z" finished-at="2021-02-05T12:35:23Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- UI02 -->
+        <test-method status="SKIP" signature="closeDriver()[pri:0, instance:com.TestCases.AuthorTests@71be98f5]" name="closeDriver" is-config="true" duration-ms="0" started-at="2021-02-05T12:35:23Z" finished-at="2021-02-05T12:35:23Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeDriver -->
+        <test-method status="SKIP" signature="login()[pri:0, instance:com.TestCases.AuthorTests@71be98f5]" name="login" is-config="true" duration-ms="0" started-at="2021-02-05T12:35:23Z" finished-at="2021-02-05T12:35:23Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- login -->
+        <test-method status="SKIP" signature="UI03()[pri:0, instance:com.TestCases.AuthorTests@71be98f5]" name="UI03" duration-ms="1" started-at="2021-02-05T12:35:23Z" finished-at="2021-02-05T12:35:23Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- UI03 -->
+        <test-method status="SKIP" signature="closeDriver()[pri:0, instance:com.TestCases.AuthorTests@71be98f5]" name="closeDriver" is-config="true" duration-ms="0" started-at="2021-02-05T12:35:23Z" finished-at="2021-02-05T12:35:23Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeDriver -->
+        <test-method status="SKIP" signature="login()[pri:0, instance:com.TestCases.AuthorTests@71be98f5]" name="login" is-config="true" duration-ms="0" started-at="2021-02-05T12:35:23Z" finished-at="2021-02-05T12:35:23Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- login -->
+        <test-method status="SKIP" signature="UI04()[pri:0, instance:com.TestCases.AuthorTests@71be98f5]" name="UI04" duration-ms="4" started-at="2021-02-05T12:35:23Z" finished-at="2021-02-05T12:35:23Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- UI04 -->
+        <test-method status="SKIP" signature="closeDriver()[pri:0, instance:com.TestCases.AuthorTests@71be98f5]" name="closeDriver" is-config="true" duration-ms="0" started-at="2021-02-05T12:35:23Z" finished-at="2021-02-05T12:35:23Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeDriver -->
       </class> <!-- com.TestCases.AuthorTests -->
       <class name="com.TestCases.AppCentreTests">
-        <test-method status="PASS" signature="setUpDriver(java.lang.String)[pri:0, instance:com.TestCases.AppCentreTests@59a6e353]" name="setUpDriver" is-config="true" duration-ms="2799" started-at="2021-02-01T10:37:18Z" finished-at="2021-02-01T10:37:21Z">
+        <test-method status="PASS" signature="setUpDriver(java.lang.String)[pri:0, instance:com.TestCases.AppCentreTests@7a0ac6e3]" name="setUpDriver" is-config="true" duration-ms="3205" started-at="2021-02-05T12:35:13Z" finished-at="2021-02-05T12:35:16Z">
           <params>
             <param index="0">
               <value>
@@ -24,14 +162,160 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpDriver -->
-        <test-method status="PASS" signature="TC01()[pri:0, instance:com.TestCases.AppCentreTests@59a6e353]" name="TC01" duration-ms="9045" started-at="2021-02-01T10:37:21Z" finished-at="2021-02-01T10:37:30Z">
+        <test-method status="PASS" signature="login()[pri:0, instance:com.TestCases.AppCentreTests@7a0ac6e3]" name="login" is-config="true" duration-ms="3510" started-at="2021-02-05T12:35:16Z" finished-at="2021-02-05T12:35:19Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- login -->
+        <test-method status="PASS" signature="TC01()[pri:0, instance:com.TestCases.AppCentreTests@7a0ac6e3]" name="TC01" duration-ms="2824" started-at="2021-02-05T12:35:19Z" finished-at="2021-02-05T12:35:22Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TC01 -->
-        <test-method status="PASS" signature="closeResources()[pri:0, instance:com.TestCases.AppCentreTests@59a6e353]" name="closeResources" is-config="true" duration-ms="792" started-at="2021-02-01T10:37:43Z" finished-at="2021-02-01T10:37:44Z">
+        <test-method status="PASS" signature="closeDriver()[pri:0, instance:com.TestCases.AppCentreTests@7a0ac6e3]" name="closeDriver" is-config="true" duration-ms="249" started-at="2021-02-05T12:35:23Z" finished-at="2021-02-05T12:35:23Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- closeResources -->
+        </test-method> <!-- closeDriver -->
+        <test-method status="FAIL" signature="login()[pri:0, instance:com.TestCases.AppCentreTests@7a0ac6e3]" name="login" is-config="true" duration-ms="0" started-at="2021-02-05T12:35:23Z" finished-at="2021-02-05T12:35:23Z">
+          <exception class="org.openqa.selenium.NoSuchSessionException">
+            <message>
+              <![CDATA[invalid session id
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-T777DIF', ip: '192.168.43.35', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_241'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 88.0.4324.146, chrome: {chromedriverVersion: 88.0.4324.96 (68dba2d8a0b14..., userDataDir: C:\Users\Admin\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:62743}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: ef9fa275c4f6cbb93f00ca56185259f5]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.NoSuchSessionException: invalid session id
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-T777DIF', ip: '192.168.43.35', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_241'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 88.0.4324.146, chrome: {chromedriverVersion: 88.0.4324.96 (68dba2d8a0b14..., userDataDir: C:\Users\Admin\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:62743}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: ef9fa275c4f6cbb93f00ca56185259f5
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:277)
+	at com.PageModules.LaunchAppCentre.launchAppCentre(LaunchAppCentre.java:20)
+	at com.TestCases.AppCentreTests.login(AppCentreTests.java:26)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)
+	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:514)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:215)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:589)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:822)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1130)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:782)
+	at org.testng.TestRunner.run(TestRunner.java:632)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:268)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1244)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
+	at org.testng.TestNG.run(TestNG.java:1064)
+	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:113)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:206)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:177)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.NoSuchSessionException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- login -->
+        <test-method status="SKIP" signature="TC03()[pri:0, instance:com.TestCases.AppCentreTests@7a0ac6e3]" name="TC03" duration-ms="2" started-at="2021-02-05T12:35:23Z" finished-at="2021-02-05T12:35:23Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC03 -->
+        <test-method status="SKIP" signature="closeDriver()[pri:0, instance:com.TestCases.AppCentreTests@7a0ac6e3]" name="closeDriver" is-config="true" duration-ms="0" started-at="2021-02-05T12:35:23Z" finished-at="2021-02-05T12:35:23Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeDriver -->
+        <test-method status="SKIP" signature="login()[pri:0, instance:com.TestCases.AppCentreTests@7a0ac6e3]" name="login" is-config="true" duration-ms="0" started-at="2021-02-05T12:35:23Z" finished-at="2021-02-05T12:35:23Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- login -->
+        <test-method status="SKIP" signature="TC04()[pri:0, instance:com.TestCases.AppCentreTests@7a0ac6e3]" name="TC04" duration-ms="1" started-at="2021-02-05T12:35:23Z" finished-at="2021-02-05T12:35:23Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC04 -->
+        <test-method status="SKIP" signature="closeDriver()[pri:0, instance:com.TestCases.AppCentreTests@7a0ac6e3]" name="closeDriver" is-config="true" duration-ms="0" started-at="2021-02-05T12:35:23Z" finished-at="2021-02-05T12:35:23Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeDriver -->
+        <test-method status="SKIP" signature="login()[pri:0, instance:com.TestCases.AppCentreTests@7a0ac6e3]" name="login" is-config="true" duration-ms="0" started-at="2021-02-05T12:35:23Z" finished-at="2021-02-05T12:35:23Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- login -->
+        <test-method status="SKIP" signature="UI01()[pri:0, instance:com.TestCases.AppCentreTests@7a0ac6e3]" name="UI01" duration-ms="2" started-at="2021-02-05T12:35:23Z" finished-at="2021-02-05T12:35:23Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- UI01 -->
+        <test-method status="SKIP" signature="closeDriver()[pri:0, instance:com.TestCases.AppCentreTests@7a0ac6e3]" name="closeDriver" is-config="true" duration-ms="0" started-at="2021-02-05T12:35:23Z" finished-at="2021-02-05T12:35:23Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeDriver -->
+        <test-method status="SKIP" signature="login()[pri:0, instance:com.TestCases.AppCentreTests@7a0ac6e3]" name="login" is-config="true" duration-ms="0" started-at="2021-02-05T12:35:23Z" finished-at="2021-02-05T12:35:23Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- login -->
+        <test-method status="SKIP" signature="UI02()[pri:0, instance:com.TestCases.AppCentreTests@7a0ac6e3]" name="UI02" duration-ms="3" started-at="2021-02-05T12:35:23Z" finished-at="2021-02-05T12:35:23Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- UI02 -->
+        <test-method status="SKIP" signature="closeDriver()[pri:0, instance:com.TestCases.AppCentreTests@7a0ac6e3]" name="closeDriver" is-config="true" duration-ms="0" started-at="2021-02-05T12:35:23Z" finished-at="2021-02-05T12:35:23Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeDriver -->
+        <test-method status="SKIP" signature="login()[pri:0, instance:com.TestCases.AppCentreTests@7a0ac6e3]" name="login" is-config="true" duration-ms="0" started-at="2021-02-05T12:35:23Z" finished-at="2021-02-05T12:35:23Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- login -->
+        <test-method status="SKIP" signature="UI03()[pri:0, instance:com.TestCases.AppCentreTests@7a0ac6e3]" name="UI03" duration-ms="2" started-at="2021-02-05T12:35:23Z" finished-at="2021-02-05T12:35:23Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- UI03 -->
+        <test-method status="SKIP" signature="closeDriver()[pri:0, instance:com.TestCases.AppCentreTests@7a0ac6e3]" name="closeDriver" is-config="true" duration-ms="0" started-at="2021-02-05T12:35:23Z" finished-at="2021-02-05T12:35:23Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeDriver -->
+        <test-method status="SKIP" signature="login()[pri:0, instance:com.TestCases.AppCentreTests@7a0ac6e3]" name="login" is-config="true" duration-ms="0" started-at="2021-02-05T12:35:23Z" finished-at="2021-02-05T12:35:23Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- login -->
+        <test-method status="SKIP" signature="UI04()[pri:0, instance:com.TestCases.AppCentreTests@7a0ac6e3]" name="UI04" duration-ms="2" started-at="2021-02-05T12:35:23Z" finished-at="2021-02-05T12:35:23Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- UI04 -->
+        <test-method status="SKIP" signature="closeDriver()[pri:0, instance:com.TestCases.AppCentreTests@7a0ac6e3]" name="closeDriver" is-config="true" duration-ms="0" started-at="2021-02-05T12:35:23Z" finished-at="2021-02-05T12:35:23Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeDriver -->
+        <test-method status="SKIP" signature="login()[pri:0, instance:com.TestCases.AppCentreTests@7a0ac6e3]" name="login" is-config="true" duration-ms="0" started-at="2021-02-05T12:35:23Z" finished-at="2021-02-05T12:35:23Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- login -->
+        <test-method status="SKIP" signature="UI05()[pri:0, instance:com.TestCases.AppCentreTests@7a0ac6e3]" name="UI05" duration-ms="4" started-at="2021-02-05T12:35:23Z" finished-at="2021-02-05T12:35:23Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- UI05 -->
+        <test-method status="SKIP" signature="closeDriver()[pri:0, instance:com.TestCases.AppCentreTests@7a0ac6e3]" name="closeDriver" is-config="true" duration-ms="0" started-at="2021-02-05T12:35:23Z" finished-at="2021-02-05T12:35:23Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeDriver -->
       </class> <!-- com.TestCases.AppCentreTests -->
     </test> <!-- Test -->
   </suite> <!-- Suite -->

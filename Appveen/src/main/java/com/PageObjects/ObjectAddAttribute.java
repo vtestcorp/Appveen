@@ -79,8 +79,10 @@ public class ObjectAddAttribute extends ObjectLoginAuthor {
 	public By togglePosition = By.xpath("//input[@formcontrolname='default']//following-sibling::span[@class='ml-3']");
 	public By linkedLibraryTextbox=By.xpath("//input[@role='combobox']");
 	public By searchOnFieldDropdown=By.xpath("//select[@id='searchOnField']");
-	public By listInputDropdown=By.xpath("//select[@formcontrolname='_listInput']");
+	public By viewFieldsDropdown=By.xpath("//select[@formcontrolname='_listInput']");
 	public By relatedToDropdown=By.xpath("//select[@id='relatedTo']");
+	public By collectionOfDropdown=By.xpath("//div[text()='Collection of']/parent::div/div//child::button");
+	
 	
 	////////// locators for selecting date in send text columns////////
 	public By selectDate = By.xpath("//button[normalize-space()='Select Date']");

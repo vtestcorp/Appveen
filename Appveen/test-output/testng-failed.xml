@@ -12,4 +12,35 @@
       <class name="com.TestCases.AuthorTests"/>
     </classes>
   </test> <!-- Test -->
+  <test name="Test(failed)">
+    <parameter name="browser" value="Chrome"/>
+    <classes>
+      <class name="com.TestCases.AuthorTests">
+        <methods>
+          <include name="UI02"/>
+          <include name="UI01"/>
+          <include name="TC05"/>
+          <include name="TC01"/>
+          <include name="UI03"/>
+          <include name="TC04"/>
+          <include name="UI04"/>
+          <include name="login"/>
+        </methods>
+      </class> <!-- com.TestCases.AuthorTests -->
+      <class name="com.TestCases.AppCentreTests">
+        <methods>
+          <include name="login"/>
+          <include name="UI05"/>
+          <include name="setUpDriver"/>
+          <include name="closeDriver"/>
+          <include name="TC04"/>
+          <include name="TC03"/>
+          <include name="UI03"/>
+          <include name="UI04"/>
+          <include name="UI01"/>
+          <include name="UI02"/>
+        </methods>
+      </class> <!-- com.TestCases.AppCentreTests -->
+    </classes>
+  </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

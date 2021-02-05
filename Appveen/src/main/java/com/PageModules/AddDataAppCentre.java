@@ -80,12 +80,7 @@ public class AddDataAppCentre extends ObjectAddDataAppCentre{
 	}
 
 	public void deleteEntry(String matchedText) {
-		try {
-			Thread.sleep(5000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		applyWait(5000);
 		List<WebElement> elements = getWebElements(allIds);
 		int size = elements.size();
 		int index = 0;

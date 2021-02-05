@@ -15,46 +15,46 @@ public class AuthorTests extends BaseClass {
 	public AuthorTests() {
 		super();
 	}
-
-	@Test(enabled=false)
+	
+	@Test(enabled=true)
 	public void TC01() throws IOException, InterruptedException {
 		LaunchAuthor author = new LaunchAuthor();
 		author.launchAuthor();
 		author.loginAuthor();
 	}
 	
-	@Test(enabled =false)
+	@Test(enabled =true)
 	public void UI01() throws IOException {
 		LaunchAuthor author = new LaunchAuthor();
 		author.launchAuthor();
 		author.loginAuthor();
-		//author.isLogoDisplayed();
+		author.isLogoDisplayed();
 		author.getCurrentAttributes();
 		author.getCaptionColorForDataService();
 		author.getCurrentRecordNumber();
 	}
-	@Test(enabled=false)
+	@Test(enabled=true)
 	public void UI02() throws IOException {
 		LaunchAuthor author = new LaunchAuthor();
 		author.launchAuthor();
 		author.loginAuthor();
 		author.getCaptionColorForDataService();
 	}
-	@Test(enabled = false)
+	@Test(enabled = true)
 	public void UI03() throws IOException {
 		LaunchAuthor author = new LaunchAuthor();
 		author.launchAuthor();
 		author.loginAuthor();
 		author.getCurrentAttributes();
 	}
-	@Test(enabled=false)
+	@Test(enabled=true)
 	public void UI04() throws IOException {
 		LaunchAuthor author = new LaunchAuthor();
 		author.launchAuthor();
 		author.loginAuthor();
 		author.getCurrentRecordNumber();
 	}
-	@Test(enabled = false)
+	@Test(enabled = true)
 	public void TC04() throws IOException {
 		LaunchAuthor author = new LaunchAuthor();
 		author.launchAuthor();

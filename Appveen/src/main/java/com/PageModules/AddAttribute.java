@@ -236,44 +236,81 @@ public class AddAttribute extends ObjectAddAttribute {
 		}
 	}
 
-	public void selectDropdownSuboptionForText(String selectDropdownSuboption) {
-		switch (selectDropdownSuboption) {
-		case "Select Text":
-			mouseHover(selectDropdownTextSuboptionText);
-			clickElement(selectDropdownTextSuboptionText);
-			dropdownSuboption = "Suboption Dropdown: Text";
-			break;
-		case "Select SecureText":
-			mouseHover(selectDropdownTextSuboptionSecureText);
-			clickElement(selectDropdownTextSuboptionSecureText);
-			dropdownSuboption = "Suboption Dropdown: SecureText";
-			break;
-		case "Select RichText":
-			mouseHover(selectDropdownTextSuboptionRichText);
-			clickElement(selectDropdownTextSuboptionRichText);
-			dropdownSuboption = "Suboption Dropdown: RichText";
-			break;
-		case "Select LongText":
-			mouseHover(selectDropdownTextSuboptionLongText);
-			clickElement(selectDropdownTextSuboptionLongText);
-			dropdownSuboption = "Suboption Dropdown: LongText";
-			break;
-		case "Select ListOfValue":
-			mouseHover(selectDropdownTextSuboptionListOfValue);
-			clickElement(selectDropdownTextSuboptionListOfValue);
-			dropdownSuboption = "Suboption Dropdown: ListOfValue";
-			break;
-		case "Select Email":
-			mouseHover(selectDropdownTextSuboptiontEmail);
-			clickElement(selectDropdownTextSuboptiontEmail);
-			dropdownSuboption = "Suboption Dropdown: Email";
-			break;
-		default:
-			mouseHover(selectDropdownTextSuboptionText);
-			clickElement(selectDropdownTextSuboptionText);
-			dropdownSuboption = "Suboption Dropdown: Text";
-			System.out.println("Selected Default Suboption text which is under main option Text");
-			break;
+	public void selectDropdownSuboption(String selectDropdownSuboption) {
+		if (dropdownMainoption.contains("Text")) {
+			switch (selectDropdownSuboption) {
+			case "Select Text":
+				mouseHover(selectDropdownTextSuboptionText);
+				clickElement(selectDropdownTextSuboptionText);
+				dropdownSuboption = "Suboption Dropdown: Text";
+				break;
+			case "Select SecureText":
+				mouseHover(selectDropdownTextSuboptionSecureText);
+				clickElement(selectDropdownTextSuboptionSecureText);
+				dropdownSuboption = "Suboption Dropdown: SecureText";
+				break;
+			case "Select RichText":
+				mouseHover(selectDropdownTextSuboptionRichText);
+				clickElement(selectDropdownTextSuboptionRichText);
+				dropdownSuboption = "Suboption Dropdown: RichText";
+				break;
+			case "Select LongText":
+				mouseHover(selectDropdownTextSuboptionLongText);
+				clickElement(selectDropdownTextSuboptionLongText);
+				dropdownSuboption = "Suboption Dropdown: LongText";
+				break;
+			case "Select ListOfValue":
+				mouseHover(selectDropdownTextSuboptionListOfValue);
+				clickElement(selectDropdownTextSuboptionListOfValue);
+				dropdownSuboption = "Suboption Dropdown: ListOfValue";
+				break;
+			case "Select Email":
+				mouseHover(selectDropdownTextSuboptiontEmail);
+				clickElement(selectDropdownTextSuboptiontEmail);
+				dropdownSuboption = "Suboption Dropdown: Email";
+				break;
+			default:
+				mouseHover(selectDropdownTextSuboptionText);
+				clickElement(selectDropdownTextSuboptionText);
+				dropdownSuboption = "Suboption Dropdown: Text";
+				System.out.println("Selected Default Suboption text which is under main option Text");
+				break;
+			}
+		} else if (dropdownMainoption.contains("Number")) {
+			switch (selectDropdownSuboption) {
+			case "selectDropdownNumberNumber":
+				mouseHover(selectDropdownNumberNumber);
+				clickElement(selectDropdownNumberNumber);
+				dropdownSuboption = "Suboption Dropdown: Number";
+				break;
+			case "selectDropdownNumberListOfValue":
+				mouseHover(selectDropdownTextSuboptionListOfValue);
+				clickElement(selectDropdownTextSuboptionListOfValue);
+				dropdownSuboption = "Suboption Dropdown: ListOFValue";
+				break;
+			case "selectDropdownNumber":
+				mouseHover(selectDropdownNumberCurrency);
+				clickElement(selectDropdownNumberCurrency);
+				dropdownSuboption = "Suboption Dropdown: Currency";
+				break;
+			default:
+				System.err.print("The Dropdown Suboption under main dropdown Number is not selected ");
+			}
+		} else if (dropdownMainoption.contains("Date")) {
+			switch (selectDropdownSuboption) {
+			case "selectDropdownDateDate":
+				mouseHover(selectDropdownDateDate);
+				clickElement(selectDropdownDateDate);
+				dropdownSuboption = "Suboption Dropdown: Date";
+				break;
+			case "selectDropdownDateDateAndTime":
+				mouseHover(selectDropdownDateDateAndTime);
+				clickElement(selectDropdownDateDateAndTime);
+				dropdownSuboption = "Suboption Dropdown: DateAndTime";
+				break;
+			}
+		} else {
+			System.out.println("There is no suboption to choose under the selected main dropdown option");
 		}
 	}
 
@@ -314,164 +351,383 @@ public class AddAttribute extends ObjectAddAttribute {
 		}
 	}
 
-	public void enterTextUnderMainDropdownText() {
-		if (dropdownSuboption.contains("Text")) {
+	public void enterTextInTextboxes() {
+		/////////// Main Dropdown is Text /////////
+		if (dropdownMainoption.contains("Text") & dropdownSuboption.contains("Text")) {
+			scrollToElement(customLableTextbox);
 			enterText(customLableTextbox, "");
+			scrollToElement(errorMessageTextbox);
 			enterText(errorMessageTextbox, "");
+			scrollToElement(deafultValueTextbox);
 			enterText(deafultValueTextbox, "");
+			scrollToElement(patternTextbox);
 			enterText(patternTextbox, "");
+			scrollToElement(minLengthTextbox);
 			enterText(minLengthTextbox, "");
+			scrollToElement(maxLengthTextbox);
 			enterText(maxLengthTextbox, "");
+			scrollToElement(descriptionTextbox);
 			enterText(descriptionTextbox, "");
 
-		} else if (dropdownSuboption.contains("LongText")) {
+		} else if (dropdownMainoption.contains("Text") & dropdownSuboption.contains("LongText")) {
+			scrollToElement(customLableTextbox);
 			enterText(customLableTextbox, "");
+			scrollToElement(customLableTextbox);
 			enterText(errorMessageTextbox, "");
+			scrollToElement(tokenTextbox);
+			enterText(tokenTextbox, "");
+			scrollToElement(descriptionTextbox);
+			enterText(descriptionTextbox, "");
+		} else if (dropdownMainoption.contains("Text") & dropdownSuboption.contains("RichText")) {
+			scrollToElement(customLableTextbox);
+			enterText(customLableTextbox, "");
+			scrollToElement(errorMessageTextbox);
+			enterText(errorMessageTextbox, "");
+			scrollToElement(tokenTextbox);
 			enterText(tokenTextbox, "");
 			clickElement(plusButton);
+			scrollToElement(descriptionTextbox);
 			enterText(descriptionTextbox, "");
-		} else if (dropdownSuboption.contains("RichText")) {
+		} else if (dropdownMainoption.contains("Text") & dropdownSuboption.contains("Email")) {
+			scrollToElement(customLableTextbox);
 			enterText(customLableTextbox, "");
+			scrollToElement(errorMessageTextbox);
 			enterText(errorMessageTextbox, "");
-			enterText(tokenTextbox, "");
-			clickElement(plusButton);
-			enterText(descriptionTextbox, "");
-		} else if (dropdownSuboption.contains("Email")) {
-			enterText(customLableTextbox, "");
-			enterText(errorMessageTextbox, "");
+			scrollToElement(defaultValueTextbox);
 			enterText(defaultValueTextbox, "");
+			scrollToElement(descriptionTextbox);
 			enterText(descriptionTextbox, "");
-		} else if (dropdownSuboption.contains("SecureText")) {
+		} else if (dropdownMainoption.contains("Text") & dropdownSuboption.contains("SecureText")) {
+			scrollToElement(customLableTextbox);
 			enterText(customLableTextbox, "");
+			scrollToElement(errorMessageTextbox);
 			enterText(errorMessageTextbox, "");
+			scrollToElement(patternTextbox);
 			enterText(patternTextbox, "");
+			scrollToElement(descriptionTextbox);
 			enterText(descriptionTextbox, "");
-		} else if (dropdownSuboption.contains("ListOfValues")) {
+		} else if (dropdownMainoption.contains("Text") & dropdownSuboption.contains("ListOfValues")) {
+			scrollToElement(customLableTextbox);
 			enterText(customLableTextbox, "");
+			scrollToElement(errorMessageTextbox);
 			enterText(errorMessageTextbox, "");
+			scrollToElement(valuesTextbox);
 			enterText(valuesTextbox, "");
 			clickElement(plusButton);
 			selectFromDropdownByText(defaultValueDropdown, "");
+			scrollToElement(descriptionTextbox);
 			enterText(descriptionTextbox, "");
 		}
-	}
-
-	public void enterTextUnderMainDropdownNumber() {
-		if (dropdownSuboption.contains("Number")) {
+		//// main dropdown number/////
+		else if (dropdownMainoption.contains("Number") & dropdownSuboption.contains("Number")) {
+			scrollToElement(customLableTextbox);
 			enterText(customLableTextbox, "");
+			scrollToElement(errorMessageTextbox);
 			enterText(errorMessageTextbox, "");
+			scrollToElement(valuesTextbox);
 			enterText(valuesTextbox, "");
 			// precision slider (1 to 5)
+			scrollToElement(minNumberTextbox);
 			enterText(minNumberTextbox, "");
+			scrollToElement(maxNumberTextbox);
 			enterText(maxNumberTextbox, "");
+			scrollToElement(descriptionTextbox);
 			enterText(descriptionTextbox, "");
-		} else if (dropdownSuboption.contains("ListOfValue")) {
+		} else if (dropdownMainoption.contains("Number") & dropdownSuboption.contains("ListOfValue")) {
+			scrollToElement(customLableTextbox);
 			enterText(customLableTextbox, "");
+			scrollToElement(errorMessageTextbox);
 			enterText(errorMessageTextbox, "");
+			scrollToElement(valuesTextbox);
 			enterText(valuesTextbox, "");
 			clickElement(plusButton);
 			selectFromDropdownByText(defaultValueDropdown, "");
+			scrollToElement(descriptionTextbox);
 			enterText(descriptionTextbox, "");
-		} else if (dropdownSuboption.contains("Currency")) {
+		} else if (dropdownMainoption.contains("Number") & dropdownSuboption.contains("Currency")) {
+			scrollToElement(customLableTextbox);
 			enterText(customLableTextbox, "");
+			scrollToElement(errorMessageTextbox);
 			enterText(errorMessageTextbox, "");
+			scrollToElement(valuesTextbox);
 			enterText(valuesTextbox, "");
 			selectFromDropdownByText(currencyDropdown, "");
 			// precision slider
+			scrollToElement(minNumberTextbox);
 			enterText(minNumberTextbox, "");
+			scrollToElement(maxNumberTextbox);
 			enterText(maxNumberTextbox, "");
+			scrollToElement(descriptionTextbox);
+			enterText(descriptionTextbox, "");
+		}
+		///////// Main Dropdown Boolean //////
+		if (dropdownMainoption.contains("Boolean")) {
+			scrollToElement(customLableTextbox);
+			enterText(customLableTextbox, "");
+			scrollToElement(errorMessageTextbox);
+			enterText(errorMessageTextbox, "");
+			if (getText(togglePosition).equalsIgnoreCase("yes")) {
+				clickElement(toggleYesNo);
+			} else if (getText(togglePosition).equalsIgnoreCase("no")) {
+				clickElement(toggleYesNo);
+			}
+			scrollToElement(descriptionTextbox);
+			enterText(descriptionTextbox, "");
+		}
+		///// Main Dropdown is Date ///////
+		if (dropdownMainoption.contains("Date")) {
+			scrollToElement(customLableTextbox);
+			enterText(customLableTextbox, "");
+			scrollToElement(errorMessageTextbox);
+			enterText(errorMessageTextbox, "");
+			selectExactDate();
+			scrollToElement(descriptionTextbox);
+			enterText(descriptionTextbox, "");
+		} else if (dropdownMainoption.contains("Time&Date")) {
+			scrollToElement(customLableTextbox);
+			enterText(customLableTextbox, "");
+			scrollToElement(errorMessageTextbox);
+			enterText(errorMessageTextbox, "");
+			selectExactDate();
+			scrollToElement(descriptionTextbox);
+			enterText(descriptionTextbox, "");
+		}
+		///// Main Dropdown is Group //////
+		else if (dropdownMainoption.contains("Group")) {
+			scrollToElement(customLableTextbox);
+			enterText(customLableTextbox, "");
+			scrollToElement(errorMessageTextbox);
+			enterText(errorMessageTextbox, "");
+			scrollToElement(descriptionTextbox);
+			enterText(descriptionTextbox, "");
+		}
+		//////// Main Dropdown is Collection /////
+		if (dropdownMainoption.contains("Collection")) {
+			scrollToElement(customLableTextbox);
+			enterText(customLableTextbox, "");
+			scrollToElement(errorMessageTextbox);
+			enterText(errorMessageTextbox, "");
+			clickElementJS(collectionOfDropdown);
+			selectMainDropdownOption("Text");
+			selectDropdownSuboption("Text");
+			scrollToElement(defaultValueTextbox);
+			enterText(defaultValueTextbox, "");
+			scrollToElement(patternTextbox);
+			enterText(patternTextbox, "");
+			scrollToElement(minLengthTextbox);
+			enterText(minLengthTextbox, "");
+			scrollToElement(maximumLengthTextbox);
+			enterText(maximumLengthTextbox, "");
+			scrollToElement(descriptionTextbox);
+			enterText(descriptionTextbox, "");
+		}
+		////// Main Dropdown is Location ///////////
+		else if (dropdownMainoption.contains("Location")) {
+			scrollToElement(customLableTextbox);
+			enterText(customLableTextbox, "");
+			scrollToElement(errorMessageTextbox);
+			enterText(errorMessageTextbox, "");
+			scrollToElement(descriptionTextbox);
+			enterText(descriptionTextbox, "");
+		}
+		///// Main Dropdown is File ///////////
+		else if (dropdownMainoption.contains("File")) {
+			scrollToElement(customLableTextbox);
+			enterText(customLableTextbox, "");
+			scrollToElement(errorMessageTextbox);
+			enterText(errorMessageTextbox, "");
+			scrollToElement(descriptionTextbox);
+			enterText(descriptionTextbox, "");
+		}
+		////// Main Dropdown option is Relation////
+		else if (dropdownMainoption.contains("Relation")) {
+			scrollToElement(customLableTextbox);
+			enterText(customLableTextbox, "");
+			scrollToElement(errorMessageTextbox);
+			enterText(errorMessageTextbox, "");
+			selectFromDropdownByText(relatedToDropdown, "");
+			// relates to (dropdown : value aviailable is data service names )
+
+			selectFromDropdownByText(searchOnFieldDropdown, "");
+			selectFromDropdownByText(viewFieldsDropdown, "");
+			// search on fields (dropdown: value available is the attributes under data
+			// service chosen)
+			// selectFromDropdownByText(, "");
+			// view fields (dropdown: value available is the attributes under data service
+			// chosen)
+			scrollToElement(defaultValueTextbox);
+			enterText(defaultValueTextbox, "");
+			clickElement(deletionOfRecordsSlider);
+			scrollToElement(descriptionTextbox);
+			enterText(descriptionTextbox, "");
+		}
+		////////// Main Dropdown Schema ///////
+		else if (dropdownMainoption.contains("Schema")) {
+			scrollToElement(customLableTextbox);
+			enterText(customLableTextbox, "");
+			scrollToElement(errorMessageTextbox);
+			enterText(errorMessageTextbox, "");
+			scrollToElement(linkedLibraryTextbox);
+			enterText(linkedLibraryTextbox, "");
+			scrollToElement(descriptionTextbox);
+			enterText(descriptionTextbox, "");
+		}
+		///// Main Dropdown User /////////
+		else if (dropdownMainoption.contains("User")) {
+			scrollToElement(customLableTextbox);
+			enterText(customLableTextbox, "");
+			scrollToElement(errorMessageTextbox);
+			enterText(errorMessageTextbox, "");
+			selectFromDropdownByText(searchOnFieldDropdown, "");
+			selectFromDropdownByText(viewFieldsDropdown, "");
+			selectFromDropdownByText(defaultValueDropdown, "");
+			enterText(descriptionTextbox, "");
+		} else if (dropdownMainoption.contains("Schema")) {
+			scrollToElement(customLableTextbox);
+			enterText(customLableTextbox, "");
+			scrollToElement(errorMessageTextbox);
+			enterText(errorMessageTextbox, "");
+			scrollToElement(linkedLibraryTextbox);
+			enterText(linkedLibraryTextbox, "");
+			scrollToElement(descriptionTextbox);
 			enterText(descriptionTextbox, "");
 		}
 	}
 
-	public void enterTextUnderBoolean() {
-		enterText(customLableTextbox, "");
-		enterText(errorMessageTextbox, "");
-		if (getText(togglePosition).equalsIgnoreCase("yes")) {
-			clickElement(toggleYesNo);
-		} else if (getText(togglePosition).equalsIgnoreCase("no")) {
-			clickElement(toggleYesNo);
-		}
-		enterText(descriptionTextbox, "");
-	}
+	// public void enterTextUnderMainDropdownNumber() {
+	// if (dropdownMainoption.contains("Number") &
+	// dropdownSuboption.contains("Number")) {
+	// enterText(customLableTextbox, "");
+	// enterText(errorMessageTextbox, "");
+	// enterText(valuesTextbox, "");
+	// // precision slider (1 to 5)
+	// enterText(minNumberTextbox, "");
+	// enterText(maxNumberTextbox, "");
+	// enterText(descriptionTextbox, "");
+	// } else if (dropdownMainoption.contains("Number") &
+	// dropdownSuboption.contains("ListOfValue")) {
+	// enterText(customLableTextbox, "");
+	// enterText(errorMessageTextbox, "");
+	// enterText(valuesTextbox, "");
+	// clickElement(plusButton);
+	// selectFromDropdownByText(defaultValueDropdown, "");
+	// enterText(descriptionTextbox, "");
+	// } else if (dropdownMainoption.contains("Number") &
+	// dropdownSuboption.contains("Currency")) {
+	// enterText(customLableTextbox, "");
+	// enterText(errorMessageTextbox, "");
+	// enterText(valuesTextbox, "");
+	// selectFromDropdownByText(currencyDropdown, "");
+	// // precision slider
+	// enterText(minNumberTextbox, "");
+	// enterText(maxNumberTextbox, "");
+	// enterText(descriptionTextbox, "");
+	// }
+	// }
+	//
+	// public void enterTextUnderBoolean() {
+	// if (dropdownMainoption.contains("Boolean")) {
+	// enterText(customLableTextbox, "");
+	// enterText(errorMessageTextbox, "");
+	// if (getText(togglePosition).equalsIgnoreCase("yes")) {
+	// clickElement(toggleYesNo);
+	// } else if (getText(togglePosition).equalsIgnoreCase("no")) {
+	// clickElement(toggleYesNo);
+	// }
+	// enterText(descriptionTextbox, "");
+	// }
+	// }
+	//
+	// public void enterTextUnderDate() {
+	// if (dropdownMainoption.contains("Date")) {
+	// enterText(customLableTextbox, "");
+	// enterText(errorMessageTextbox, "");
+	// selectExactDate();
+	// enterText(descriptionTextbox, "");
+	// }
+	// }
+	//
+	// public void enterTextUnderGroup() {
+	// if (dropdownMainoption.contains("Group")) {
+	// enterText(customLableTextbox, "");
+	// enterText(errorMessageTextbox, "");
+	// enterText(descriptionTextbox, "");
+	// }
+	// }
+	//
+	// public void enterTextUnderCollection() {
+	// if (dropdownMainoption.contains("Collection")) {
+	// // all 11 mainoption and under it all suboptions are available
+	// enterText(customLableTextbox, "");
+	// enterText(errorMessageTextbox, "");
+	// clickElementJS(collectionOfDropdown);
+	// // selectMainDropdownOption(mainDropdownOption);
+	//
+	// // collection of dropdown (again all 11 dropdown value available under which
+	// all
+	// // suboption)
+	// }
+	// }
+	//
+	// public void enterTextUnderLocation() {
+	// if (dropdownMainoption.contains("Location")) {
+	// enterText(customLableTextbox, "");
+	// enterText(errorMessageTextbox, "");
+	// enterText(descriptionTextbox, "");
+	// }
+	// }
+	//
+	// public void enterTextUnderFile() {
+	// if (dropdownMainoption.contains("File")) {
+	// enterText(customLableTextbox, "");
+	// enterText(errorMessageTextbox, "");
+	// enterText(descriptionTextbox, "");
+	// }
+	// }
+	//
+	// public void enterTextUnderRelation() {
+	// if (dropdownMainoption.contains("Relation")) {
+	// enterText(customLableTextbox, "");
+	// enterText(errorMessageTextbox, "");
+	// selectFromDropdownByText(relatedToDropdown, "");
+	// // relates to (dropdown : value aviailable is data service names )
+	//
+	// selectFromDropdownByText(searchOnFieldDropdown, "");
+	// selectFromDropdownByText(viewFieldsDropdown, "");
+	// // search on fields (dropdown: value available is the attributes under data
+	// // service chosen)
+	// // selectFromDropdownByText(, "");
+	// // view fields (dropdown: value available is the attributes under data
+	// service
+	// // chosen)
+	// enterText(defaultValueTextbox, "");
+	// clickElement(deletionOfRecordsSlider);
+	// enterText(descriptionTextbox, "");
+	// }
+	// }
+	//
+	// public void enterTextUnderSchema() {
+	// if (dropdownMainoption.contains("Schema")) {
+	// enterText(customLableTextbox, "");
+	// enterText(errorMessageTextbox, "");
+	// enterText(linkedLibraryTextbox, "");
+	// enterText(descriptionTextbox, "");
+	// }
+	// }
+	//
+	// public void enterTextUnderUser() {
+	// if (dropdownMainoption.contains("User")) {
+	// enterText(customLableTextbox, "");
+	// enterText(errorMessageTextbox, "");
+	// selectFromDropdownByText(searchOnFieldDropdown, "");
+	// selectFromDropdownByText(viewFieldsDropdown, "");
+	// selectFromDropdownByText(defaultValueDropdown, "");
+	// enterText(descriptionTextbox, "");
+	// }
+	// }
 
-	public void enterTextUnderDate(JSONObject object) {
-		enterText(customLableTextbox, "");
-		enterText(errorMessageTextbox, "");
-		selectExactDate(object);
-		enterText(descriptionTextbox, "");
-	}
-
-	public void enterTextUnderGroup() {
-		enterText(customLableTextbox, "");
-		enterText(errorMessageTextbox, "");
-		enterText(descriptionTextbox, "");
-
-	}
-
-	public void enterTextUnderCollection() {
-		// all 11 mainoption and under it all suboptions are avaialable
-		enterText(customLableTextbox, "");
-		enterText(errorMessageTextbox, "");
-		// collection of dropdown (again all 11 dropdown value available under which all
-		// suboption)
-
-	}
-
-	public void enterTextUnderLocation() {
-		enterText(customLableTextbox, "");
-		enterText(errorMessageTextbox, "");
-		enterText(descriptionTextbox, "");
-	}
-
-	public void enterTextUnderFile() {
-		enterText(customLableTextbox, "");
-		enterText(errorMessageTextbox, "");
-		enterText(descriptionTextbox, "");
-	}
-
-	public void enterTextUnderRelation() {
-		enterText(customLableTextbox, "");
-		enterText(errorMessageTextbox, "");
-		selectFromDropdownByText(relatedToDropdown, "");
-		// relates to (dropdown : value aviailable is data service names )
-
-		selectFromDropdownByText(searchOnFieldDropdown, "");
-		// search on fields (dropdown: value available is the attributes under data
-		// service chosen)
-		// selectFromDropdownByText(, "");
-		// view fields (dropdown: value available is the attributes under data service
-		// chosen)
-		enterText(defaultValueTextbox, "");
-		// allow deletion of records toggle bar
-		enterText(descriptionTextbox, "");
-	}
-
-	public void enterTextUnderSchema() {
-
-		enterText(customLableTextbox, "");
-		enterText(errorMessageTextbox, "");
-		enterText(linkedLibraryTextbox, "");
-		enterText(descriptionTextbox, "");
-
-	}
-
-	public void enterTextUnderUser() {
-		// select[@formcontrolname='_listInput']
-		// select[@id='relatedTo']
-
-		enterText(customLableTextbox, "");
-		enterText(errorMessageTextbox, "");
-		selectFromDropdownByText(searchOnFieldDropdown, "");
-
-		// selectFromDropdownByText(addNewDataService, "");
-		// viewfields dropdown and then select from dropdown
-		selectFromDropdownByText(defaultValueDropdown, "");
-		enterText(descriptionTextbox, "");
-	}
-
-	public void selectExactDate(JSONObject object) {
-		JSONObject dateobject = object;
+	public void selectExactDate() {
+		JSONObject dateobject = getDateJSON();
 		clickElement(selectDate);
 		selectFromDropdownByText(month, dateobject.getString("Month"));
 		selectFromDropdownByText(year, dateobject.getString("Year"));
@@ -481,4 +737,34 @@ public class AddAttribute extends ObjectAddAttribute {
 		clickElement(doneButton);
 	}
 
+	public JSONObject getDateJSON() {
+		JSONObject object = new JSONObject();
+		object.put("Month", "January");
+		object.putOnce("Year", "2021");
+		object.put("Hour", "12");
+		object.put("Minute", "12");
+		object.put("Seconds", "12");
+		return object;
+
+	}
+
+	public void addNEWAttribute() {
+		JSONObject object=new JSONObject();
+		clickElement(editButton);
+		clickElement(editDraft);
+		int numberofPreviousAttributes = numberOfPreviousAttributes();
+		clickElement(newAttribute);
+		int numberOfCurrentAttributes = numberOfPreviousAttributes();
+		applyWait(3000);
+		if (numberofPreviousAttributes < numberOfCurrentAttributes) {
+			nameRecentlyAddedAttribute(object.getString("Attribute Name"));
+		}
+		selectMainDropdownOption("");
+		selectRadioButtonOptions("");
+		selectDropdownSuboption("");
+		enterTextInTextboxes();
+		scrollToElement(saveButtonAttribute);
+		clickElement(saveButtonAttribute);
+		
+	}
 }

@@ -19,6 +19,8 @@ public class AppCentreTests extends BaseClass {
 	public AppCentreTests() {
 		super();
 	}
+	
+
 	@Test
 	public void TC01() {
 		LaunchAppCentre centre = new LaunchAppCentre();
@@ -43,7 +45,7 @@ public class AppCentreTests extends BaseClass {
 		adddataappcentre.addData();
 	}
 
-	@Test(enabled = false)
+	@Test(enabled = true)
 	public void TC03() {
 		LaunchAppCentre centre = new LaunchAppCentre();
 		centre.launchAppCentre();
@@ -52,7 +54,7 @@ public class AppCentreTests extends BaseClass {
 		centred.deleteEntry("123");
 	}
 
-	@Test(enabled = false)
+	@Test(enabled = true)
 	public void TC04() {
 		LaunchAppCentre centre = new LaunchAppCentre();
 		centre.launchAppCentre();
@@ -61,7 +63,7 @@ public class AppCentreTests extends BaseClass {
 		centred.editEntryById("123", "_id", "1234567");
 	}
 
-	@Test(enabled=false)
+	@Test(enabled=true)
 	public void UI01() {
 		LaunchAppCentre centre = new LaunchAppCentre();
 		centre.launchAppCentre();
@@ -71,49 +73,50 @@ public class AppCentreTests extends BaseClass {
 		adddataappcentre.isSelectAllCheckBoxSelected();
 	}
 
-	@Test (enabled =false)
+	@Test (enabled =true)
 	public void UI02() {
 		LaunchAppCentre centre = new LaunchAppCentre();
 		centre.launchAppCentre();
 		centre.loginAppCentre();
-		centre.applyWait(5000);
 		AddDataAppCentre adddataappcentre = new AddDataAppCentre();
+		adddataappcentre.applyWait(5000);
 		adddataappcentre.individualCheckBoxSelectable();
 	}
 
-	@Test(enabled=false)
+	@Test(enabled=true)
 	public void UI03() {
 		LaunchAppCentre centre = new LaunchAppCentre();
 		centre.launchAppCentre();
 		centre.loginAppCentre();
-		centre.applyWait(5000);
 		AddDataAppCentre adddataappcentre = new AddDataAppCentre();
+		adddataappcentre.applyWait(5000);
 		boolean result = adddataappcentre.isDeleteIconDisplayed();
 		if (result) {
 			System.out.println("the element is displayed");
 		}
 	}
 
-	@Test(enabled=false)
+	@Test(enabled=true)
 	public void UI04() {
 		LaunchAppCentre centre = new LaunchAppCentre();
 		centre.launchAppCentre();
 		centre.loginAppCentre();
 		centre.applyWait(5000);
 		AddDataAppCentre adddataappcentre = new AddDataAppCentre();
+		adddataappcentre.applyWait(5000);
 		boolean result = adddataappcentre.isEditIconDisplayed();
 		if (result) {
 			System.out.println("the element is displayed");
 		}
 	}
 
-	@Test (enabled =false)
+	@Test (enabled =true)
 	public void UI05() {
 		LaunchAppCentre centre = new LaunchAppCentre();
 		centre.launchAppCentre();
 		centre.loginAppCentre();
-		centre.applyWait(5000);
 		AddDataAppCentre adddataappcentre = new AddDataAppCentre();
+		adddataappcentre.applyWait(5000);
 		boolean result = adddataappcentre.isAddDateButtonClickable();
 		if (result) {
 			System.out.println("AddData Button clickable");

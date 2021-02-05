@@ -6,12 +6,14 @@
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="mouse" key="selection"/>
+		<item value="scroll" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="scroll"/>
+			<item value="Selected"/>
 			<item value="mouse"/>
 			<item value="Imgproc"/>
 			<item value="Extra"/>
@@ -25,8 +27,6 @@
 			<item value="created"/>
 			<item value="cardName"/>
 			<item value="card"/>
-			<item value="filterTenant"/>
-			<item value="tenantFilter"/>
 		</list>
 		<list key="replacehistory">
 		</list>
